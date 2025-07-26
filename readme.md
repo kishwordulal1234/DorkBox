@@ -124,13 +124,20 @@ use firefox an use this with every dork
 ```
 -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com -site:mysqlforum.com -site:forums.mysql.com
 i use the most
+
+
 site:*.com inurl:php?id= (intext:"You have an error in your SQL syntax" | intext:"mysql_fetch" | intext:"Warning: mysql") -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com -site:mysqlforum.com -site:forums.mysql.com
+
 
 site:*.com inurl:"php?id=" (intext:"SQL syntax" | intext:"mysql_fetch" | intext:"Warning MYSQL:")
 -site:bugs.mysql.com -site:bug.php -site:bugs ...
 
 
 site:*.com inurl:"php?id=" (intext:"SQL syntax" | intext:"mysql_fetch" | intext:"Warning MYSQL:") -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+
+
+inurl:".php?id=" "You have an error in your SQL syntax"
+
 ```
 
 ### 5. Alternative Search Engines
