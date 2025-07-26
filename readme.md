@@ -1,10 +1,10 @@
-# 🔍 Comprehensive Google Dorks for Security Research
+# 🔍 DorkBox - The Ultimate Google Dorks Toolkit
 
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/google-dorks?style=social)](https://github.com/kishwordulal1234/DorkBox)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/yourusername/dorkbox?style=social)](https://github.com/yourusername/dorkbox)
+[![License](https://img.shields.io/badge/license-CC%20BY--NC--ND%204.0-blue.svg)](LICENSE)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
-A comprehensive collection of Google search queries (dorks) for cybersecurity research, penetration testing, and bug bounty hunting. This repository serves as a resource for security professionals, researchers, and ethical hackers.
+A comprehensive collection of **working** Google search queries (dorks) for cybersecurity research, penetration testing, and bug bounty hunting. All dorks are tested and proven effective for finding real vulnerabilities.
 
 ## ⚠️ IMPORTANT LEGAL DISCLAIMER
 
@@ -29,1237 +29,1649 @@ By using this repository, you agree to use it responsibly and in accordance with
 
 ## 📚 Table of Contents
 
-- [SQL Injection Dorks](#-sql-injection-dorks)
-- [XSS (Cross-Site Scripting) Dorks](#-xss-cross-site-scripting-dorks)
-- [LFI/RFI (File Inclusion) Dorks](#-lfirfi-file-inclusion-dorks)
-- [Command Injection Dorks](#-command-injection-dorks)
-- [Directory Traversal Dorks](#-directory-traversal-dorks)
-- [Configuration Files & Sensitive Data](#-configuration-files--sensitive-data)
-- [Database Exposure Dorks](#-database-exposure-dorks)
-- [Login Pages & Admin Panels](#-login-pages--admin-panels)
-- [File Upload Vulnerabilities](#-file-upload-vulnerabilities)
-- [IoT & Network Devices](#-iot--network-devices)
-- [Web Cameras & Surveillance](#-web-cameras--surveillance)
-- [API Endpoints](#-api-endpoints)
-- [Version Disclosure](#-version-disclosure)
-- [Backup Files](#-backup-files)
-- [Log Files](#-log-files)
-- [Development & Testing](#-development--testing)
-- [E-commerce Vulnerabilities](#-e-commerce-vulnerabilities)
-- [Educational Resources](#-educational-resources)
+- [🔍 Best Browsers for Dorking](#-best-browsers-for-dorking)
+- [💉 SQL Injection Dorks](#-sql-injection-dorks)
+- [🔥 XSS (Cross-Site Scripting) Dorks](#-xss-cross-site-scripting-dorks)
+- [🌐 HTML Injection Dorks](#-html-injection-dorks)
+- [🚀 Remote Code Execution (RCE) Dorks](#-remote-code-execution-rce-dorks)
+- [📁 LFI/RFI (File Inclusion) Dorks](#-lfirfi-file-inclusion-dorks)
+- [📤 File Upload Vulnerabilities](#-file-upload-vulnerabilities)
+- [🔐 Configuration Files & Sensitive Data](#-configuration-files--sensitive-data)
+- [🗄️ Database Exposure Dorks](#-database-exposure-dorks)
+- [🔑 Login Pages & Admin Panels](#-login-pages--admin-panels)
+- [🏠 IoT & Network Devices](#-iot--network-devices)
+- [📹 Web Cameras & Surveillance](#-web-cameras--surveillance)
+- [🔌 API Endpoints](#-api-endpoints)
+- [💾 Backup Files](#-backup-files)
+- [📝 Log Files](#-log-files)
+- [🧪 Development & Testing](#-development--testing)
+- [🛒 E-commerce Vulnerabilities](#-e-commerce-vulnerabilities)
+- [🎓 Educational Resources](#-educational-resources)
+
+---
+
+## 🔍 Best Browsers for Google Dorking
+
+### 🥇 1. Firefox (Most Recommended)
+```
+✅ Superior Privacy Controls
+✅ Advanced Search Extensions Support
+✅ User-Agent Switching Capabilities
+✅ Excellent Cookie Management
+✅ VPN Integration Support
+✅ Comprehensive Developer Tools
+✅ No Search Result Filtering
+
+Recommended Extensions:
+- User-Agent Switcher and Manager
+- Cookie Quick Manager
+- Privacy Badger
+- uBlock Origin
+- FoxyProxy Standard
+- ClearURLs
+```
+
+### 🥈 2. Brave Browser
+```
+✅ Built-in Tor Integration
+✅ Native Ad/Tracker Blocking
+✅ Fingerprint Protection
+✅ Privacy-First Design Philosophy
+✅ Chromium-Based Compatibility
+✅ No Search Censorship
+
+Key Features:
+- Built-in VPN (Premium)
+- Private Windows with Tor
+- Aggressive Shield Settings
+- Advanced Privacy Controls
+- Search Result Transparency
+```
+
+### 🥉 3. Chrome (With Privacy Extensions)
+```
+⚠️ Requires Heavy Privacy Configuration
+✅ Excellent Developer Tools
+✅ Large Extension Ecosystem
+✅ Sync Capabilities
+❌ Google Tracking Concerns
+
+Essential Extensions:
+- Privacy Badger
+- uBlock Origin
+- User-Agent Switcher
+- Decentraleyes
+- ClearURLs
+- VPN Extension
+```
+
+### 4. Microsoft Edge
+```
+⚠️ Privacy Concerns Present
+✅ InPrivate Mode Available
+✅ Basic Tracking Prevention
+✅ Collections Feature
+❌ Limited Dorking Effectiveness
+
+Configuration Tips:
+- Always Use InPrivate Mode
+- Enable Strict Tracking Prevention
+- Install Privacy Extensions
+- Disable Bing Integration
+```
+
+### 5. Alternative Search Engines
+```
+🔍 Bing - Different Indexing, Less Filtering
+🔍 DuckDuckGo - Privacy-Focused, Limited Results
+🔍 Yandex - Different Regional Focus
+🔍 Baidu - Chinese Content Focus
+🔍 Searx - Open Source, Aggregated Results
+
+Bing-Specific Operators:
+- ip:192.168.1.1 (IP-based searches)
+- contains:password (file content search)
+- filetype: (works differently than Google)
+- site: (has regional variations)
+```
 
 ---
 
 ## 💉 SQL Injection Dorks
 
-### 🟢 Easy Level SQL Injection Dorks
+### 🟢 Easy Level SQL Injection Dorks (Beginner)
 ```
-# Basic Error-Based SQL Injection
-inurl:"id=" & intext:"mysql_fetch_array"
-inurl:"id=" & intext:"mysql_num_rows"
-inurl:"id=" & intext:"mysql_connect"
-inurl:"id=" & intext:"You have an error in your SQL syntax"
-inurl:"page=" & intext:"mysql_fetch_array"
-inurl:"category=" & intext:"mysql_num_rows"
-inurl:"login=" & intext:"Warning: mysql_"
-"SQL syntax" "mysql_fetch_array"
+# Basic PHP MySQL Errors
+intext:"Warning: mysql_fetch_assoc()" inurl:".php?id="
+intext:"Warning: mysql_num_rows()" inurl:".php?id="
+intext:"SQL syntax error" inurl:"php?id="
+intext:"mysql_fetch_array()" inurl:"id="
+inurl:".php?id=" "You have an error in your SQL syntax"
+
+# Simple Parameter Testing
+inurl:"news.php?id="
+inurl:"article.php?id="
+inurl:"product.php?id="
+inurl:"page.php?id="
+inurl:"item.php?id="
 ```
 
-### 🟡 Medium Level SQL Injection Dorks
+### 🟡 Medium Level SQL Injection Dorks (Intermediate)
 ```
-# Multiple Database Types
-"mysql_fetch_assoc" "expects parameter"
-"mysql_fetch_row" "expects parameter"
-"ORA-00933" "SQL command not properly ended"
-"Microsoft OLE DB Provider" "error"
-"ODBC Microsoft Access Driver"
-"Invalid Querystring" "sql"
-"Warning: pg_connect"
-"PostgreSQL query failed"
-"sqlite_query" "error"
-"mssql_query" "error"
+# Multiple Database Error Types
+intext:"SQLSTATE[42000]" inurl:"php?id="
+intext:"Warning: pg_query()" inurl:".php?id="
+intext:"Microsoft OLE DB Provider" inurl:"asp?id="
+intext:"ORA-00933: SQL command not properly ended"
+intext:"sqlite3.OperationalError:" inurl:"py?"
+
+# Regional Targeting with Errors
+site:*.edu intext:"SQL syntax error" | intext:"mysql_fetch_assoc"
+site:*.gov intext:"Warning: mysql" inurl:"php?id="
+site:*.org intext:"SQLSTATE" | intext:"PDOException"
 ```
 
-### 🔴 Advanced Level SQL Injection Dorks
+### 🔴 Advanced Level SQL Injection Dorks (Expert)
 ```
 # Complex Parameter Combinations
-(inurl:"id=" OR inurl:"pid=" OR inurl:"uid=") & intext:"mysql"
-(inurl:"category=" OR inurl:"cat=" OR inurl:"cid=") & intext:"sql"
-site:*.edu (inurl:"id=" OR inurl:"page=") & intext:"database"
-site:*.gov (inurl:"article=" OR inurl:"news=") & intext:"mysql"
-filetype:php (inurl:"id=" OR inurl:"page=") & intext:"error"
+inurl:(details.php | view.php | item.php | search.php) inurl:id= intext:"mysql"
+site:*.com inurl:"php?id=" (intext:"SQL syntax" | intext:"mysql_fetch" | intext:"Warning:")
+(inurl:"category=" | inurl:"cat=" | inurl:"cid=") intext:"database error"
+
+# Advanced Database-Specific Errors
+site:*.edu intext:"Microsoft OLE DB Provider for SQL Server" intext:"80040e14"
+site:*.gov intext:"PostgreSQL query failed" inurl:"php?"
+site:*.org intext:"Oracle error" | intext:"ORA-" inurl:"jsp?"
 ```
 
-### 🚀 Multi-Thread Level SQL Injection Dorks
+### 🚀 Multi-Thread Level SQL Injection Dorks (Mass Discovery)
 ```
 # Bulk Discovery Patterns
-((inurl:"id=" OR inurl:"pid=" OR inurl:"uid=" OR inurl:"cid=") AND (intext:"mysql" OR intext:"sql" OR intext:"database")) site:*.com
-((inurl:"page=" OR inurl:"article=" OR inurl:"news=" OR inurl:"item=") AND (intext:"error" OR intext:"warning" OR intext:"fatal")) filetype:php
-(site:*.edu OR site:*.org OR site:*.gov) AND ((inurl:"id=" OR inurl:"page=") AND (intext:"mysql" OR intext:"sql"))
+((inurl:"id=" | inurl:"pid=" | inurl:"uid=" | inurl:"cid=") & (intext:"mysql" | intext:"sql" | intext:"database")) site:*.com
+((inurl:"page=" | inurl:"article=" | inurl:"news=" | inurl:"item=") & (intext:"error" | intext:"warning" | intext:"fatal")) filetype:php
+(site:*.edu | site:*.org | site:*.gov) & ((inurl:"id=" | inurl:"page=") & (intext:"mysql" | intext:"sql"))
 ```
 
-### 🔥 Crazy Level SQL Injection Dorks
+### 🔥 Crazy Level SQL Injection Dorks (Extreme Discovery)
 ```
-# Extreme Discovery Combinations
-(((inurl:"id=" OR inurl:"pid=" OR inurl:"uid=" OR inurl:"cid=" OR inurl:"page=" OR inurl:"cat=") AND (intext:"mysql" OR intext:"sql" OR intext:"database" OR intext:"oracle" OR intext:"postgresql")) AND (site:*.com OR site:*.org OR site:*.net OR site:*.edu OR site:*.gov)) -site:github.com -site:stackoverflow.com
-((filetype:php OR filetype:asp OR filetype:aspx OR filetype:jsp) AND ((inurl:"id=" OR inurl:"page=" OR inurl:"article=" OR inurl:"news=") AND (intext:"error" OR intext:"warning" OR intext:"exception" OR intext:"fatal")))
+# Maximum Coverage Combinations
+(((inurl:"id=" | inurl:"pid=" | inurl:"uid=" | inurl:"cid=" | inurl:"page=" | inurl:"cat=") & (intext:"mysql" | intext:"sql" | intext:"database" | intext:"oracle" | intext:"postgresql")) & (site:*.com | site:*.org | site:*.net | site:*.edu | site:*.gov)) -site:github.com -site:stackoverflow.com
+
+# Country-Specific Mass Discovery
+((site:*.np | site:*.in | site:*.pk | site:*.bd | site:*.lk) & (inurl:"php?id=" | inurl:"asp?id=") & (intext:"SQL" | intext:"mysql" | intext:"database"))
 ```
 
-### 🗄️ All Database Types SQL Injection
+### 🗄️ Database-Specific SQL Injection Dorks
 
-#### MySQL Database Dorks
+#### MySQL Database Errors
 ```
-"mysql_fetch_array" "warning"
-"mysql_num_rows" "warning"
-"mysql_query" "error"
-"mysql_connect" "failed"
-"Table 'mysql" "doesn't exist"
-"MySQL server version" "error"
-```
-
-#### PostgreSQL Database Dorks
-```
-"pg_query" "error"
-"pg_connect" "failed"
-"PostgreSQL" "ERROR"
-"psql" "error"
-"relation" "does not exist"
-"pg_num_rows" "warning"
+intext:"Warning: mysql_fetch_assoc()" inurl:"php?id="
+intext:"mysql_num_rows(): supplied argument" inurl:".php?id="
+intext:"Table 'mysql.user' doesn't exist" inurl:"php?"
+intext:"MySQL server version for the right syntax" inurl:"id="
+site:*.np intext:"Warning: mysql" | intext:"mysql_fetch"
 ```
 
-#### Oracle Database Dorks
+#### PostgreSQL Database Errors  
 ```
-"ORA-00933" "SQL command"
-"ORA-01756" "quoted string"
-"ORA-00936" "missing expression"
-"Oracle" "OCI" "error"
-"TNS" "could not resolve"
-"PLS-" "error"
-```
-
-#### SQL Server (MSSQL) Database Dorks
-```
-"Microsoft OLE DB Provider" "error"
-"ODBC SQL Server Driver"
-"SQL Server" "error"
-"mssql_query" "error"
-"Unclosed quotation mark"
-"Microsoft JET Database"
+intext:"Warning: pg_query()" inurl:"php?"
+intext:"PostgreSQL query failed: ERROR:" 
+intext:"pg_connect(): Unable to connect" inurl:"php?"
+intext:"relation does not exist" inurl:"php?id="
+site:*.in intext:"pg_query" | intext:"PostgreSQL"
 ```
 
-#### SQLite Database Dorks
+#### Oracle Database Errors
 ```
-"sqlite_query" "error"
-"SQLite" "database is locked"
-"sqlite3" "error"
-"database disk image is malformed"
-"SQLite format 3"
+intext:"ORA-00933: SQL command not properly ended"
+intext:"ORA-01756: quoted string not properly terminated"
+intext:"ORA-00936: missing expression" inurl:"jsp?"
+intext:"TNS: could not resolve service name"
+site:*.gov intext:"ORA-" | intext:"Oracle error"
 ```
 
-### ⏱️ Time-Based SQL Injection Dorks
+#### SQL Server (MSSQL) Errors
 ```
-# Time-Based Detection
-"sleep" inurl:"id=" filetype:php
-"benchmark" inurl:"id=" filetype:php
-"waitfor delay" inurl:"id=" filetype:asp
-"pg_sleep" inurl:"id=" filetype:php
-"dbms_pipe.receive_message" inurl:"id="
-site:*.edu inurl:"id=" "sleep"
-site:*.com inurl:"page=" "waitfor"
+intext:"Microsoft OLE DB Provider for SQL Server" intext:"80040e14"
+intext:"ODBC SQL Server Driver" inurl:"asp?"
+intext:"Unclosed quotation mark before the character string"
+intext:"Microsoft JET Database Engine error" inurl:"asp?id="
+site:*.com intext:"Microsoft OLE DB" | intext:"SQL Server"
+```
+
+#### SQLite Database Errors
+```
+intext:"sqlite3.OperationalError:" inurl:"py?"
+intext:"SQLite error: database is locked"
+intext:"database disk image is malformed"
+intext:"SQLite format 3" filetype:db
+site:*.org intext:"sqlite" | intext:"SQLite error"
+```
+
+### ⏱️ Time-Based SQL Injection Discovery
+```
+# Time Delay Function Detection
+inurl:"php?id=" intext:"sleep(" 
+inurl:"asp?id=" intext:"waitfor delay"
+inurl:"php?" intext:"benchmark("
+inurl:"jsp?" intext:"dbms_pipe.receive_message"
+site:*.edu inurl:"id=" intext:"sleep" | intext:"delay"
 ```
 
 ### 🔍 Boolean-Based Blind SQL Injection
 ```
-inurl:"id=" "true" "false" filetype:php
-inurl:"page=" "1=1" "1=2" filetype:asp
-"boolean" "blind" "sql" site:*.edu
-inurl:"search=" "and" "or" filetype:php
+inurl:"php?id=" intext:"true" intext:"false"
+inurl:"id=" (intext:"1=1" | intext:"1=2") filetype:php
+inurl:"search.php?" intext:"and" intext:"or"
+site:*.com inurl:"category=" (intext:"true" | intext:"false")
 ```
 
-### 📊 UNION-Based SQL Injection
+### 📊 UNION-Based SQL Injection Discovery
 ```
-"union select" inurl:"id=" filetype:php
-"union all select" inurl:"page=" filetype:asp
-"order by" inurl:"id=" filetype:php
-"group by" inurl:"category=" filetype:php
+inurl:"php?id=" intext:"union select"
+inurl:"id=" intext:"union all select" filetype:php
+inurl:"page=" intext:"order by" filetype:asp
+inurl:"item=" intext:"group by" intext:"having"
 ```
 
-### 💾 Stored SQL Injection
+### 💾 Stored/Insert SQL Injection
 ```
-"insert into" "values" filetype:php
-"update" "set" "where" filetype:asp
-"delete from" "where" filetype:php
-"stored procedure" "execute" filetype:asp
+inurl:"register.php" intext:"insert into"
+inurl:"contact.php" intext:"insert" intext:"values"
+inurl:"feedback.php" intext:"update" intext:"set"
+inurl:"comment.php" intext:"insert" | intext:"update"
 ```
 
 ---
 
 ## 🔥 XSS (Cross-Site Scripting) Dorks
 
-### 🟢 Easy Level XSS Dorks
+### 🟢 Easy Level XSS Dorks (Beginner)
 ```
-# Basic Reflected XSS
-inurl:"q=" site:*.edu
-inurl:"search=" site:*.com
+# Basic Reflected XSS Parameters
+inurl:"search=" site:*.edu
+inurl:"q=" site:*.com  
 inurl:"query=" filetype:php
 inurl:"keyword=" filetype:asp
-inurl:"s=" site:*.org
-"<script>" site:*.edu
-"javascript:" site:*.gov
+inurl:"s=" filetype:php
+inurl:"term=" site:*.org
 ```
 
-### 🟡 Medium Level XSS Dorks
+### 🟡 Medium Level XSS Dorks (Intermediate)
 ```
-# Multiple XSS Vectors
-"<img src=" "onerror=" filetype:php
-"<iframe" "onload=" filetype:asp
-"<body" "onload=" filetype:php
-"<svg" "onload=" filetype:html
-"<input" "onfocus=" filetype:php
-"alert(" site:*.com
-"confirm(" site:*.org
-"prompt(" site:*.edu
+# XSS with HTML Tags Present
+inurl:"search=" intext:"<script>" filetype:php
+inurl:"q=" intext:"javascript:" site:*.com
+inurl:"name=" intext:"<img" filetype:php
+inurl:"title=" intext:"onerror=" filetype:asp
+inurl:"comment=" intext:"onload=" filetype:php
 ```
 
-### 🔴 Advanced Level XSS Dorks
+### 🔴 Advanced Level XSS Dorks (Expert)
 ```
-# Complex XSS Detection
-(inurl:"search=" OR inurl:"q=" OR inurl:"query=") AND ("<script>" OR "javascript:" OR "onerror=")
-(inurl:"name=" OR inurl:"title=" OR inurl:"message=") AND ("alert(" OR "confirm(" OR "prompt(")
-site:*.edu (inurl:"comment=" OR inurl:"feedback=") AND ("<" OR ">" OR "javascript:")
-```
-
-### 🚀 Multi-Thread Level XSS Dorks
-```
-# Bulk XSS Discovery
-((inurl:"search=" OR inurl:"q=" OR inurl:"query=" OR inurl:"keyword=") AND (filetype:php OR filetype:asp OR filetype:jsp)) -site:github.com
-((inurl:"name=" OR inurl:"title=" OR inurl:"comment=" OR inurl:"message=") AND ("<script>" OR "javascript:" OR "onerror=" OR "onload="))
+# Complex XSS Detection Patterns
+(inurl:"search=" | inurl:"q=" | inurl:"query=") & (intext:"<script>" | intext:"javascript:" | intext:"onerror=")
+(inurl:"name=" | inurl:"title=" | inurl:"message=") & (intext:"alert(" | intext:"confirm(" | intext:"prompt(")
+site:*.edu (inurl:"comment=" | inurl:"feedback=") & (intext:"<" | intext:">" | intext:"javascript:")
 ```
 
-### 🔥 Crazy Level XSS Dorks
+### 🚀 Multi-Thread Level XSS Dorks (Mass Discovery)
 ```
-# Extreme XSS Discovery
-(((inurl:"search=" OR inurl:"q=" OR inurl:"query=" OR inurl:"s=" OR inurl:"keyword=" OR inurl:"term=") AND (filetype:php OR filetype:asp OR filetype:jsp OR filetype:html)) AND (site:*.com OR site:*.org OR site:*.net OR site:*.edu)) -site:github.com -site:stackoverflow.com
+# Bulk XSS Parameter Discovery
+((inurl:"search=" | inurl:"q=" | inurl:"query=" | inurl:"keyword=") & (filetype:php | filetype:asp | filetype:jsp)) -site:github.com -site:w3schools.com
+((inurl:"name=" | inurl:"title=" | inurl:"comment=" | inurl:"message=") & (site:*.edu | site:*.org | site:*.gov))
+```
+
+### 🔥 Crazy Level XSS Dorks (Extreme Discovery)
+```
+# Maximum XSS Coverage
+(((inurl:"search=" | inurl:"q=" | inurl:"query=" | inurl:"s=" | inurl:"keyword=" | inurl:"term=") & (filetype:php | filetype:asp | filetype:jsp | filetype:html)) & (site:*.com | site:*.org | site:*.net | site:*.edu)) -site:github.com -site:stackoverflow.com -site:w3schools.com
 ```
 
 ### 🔍 Reflected XSS Dorks
 ```
-# URL Parameter Reflection
-inurl:"q=" "reflected" filetype:php
-inurl:"search=" "parameter" filetype:asp
-inurl:"query=" "echo" filetype:php
-inurl:"input=" "print" filetype:php
-"$_GET" "echo" filetype:php
-"$_POST" "print" filetype:php
-"Request.QueryString" filetype:asp
+# Parameter Reflection Testing
+inurl:"search.php?q=" 
+inurl:"index.php?search="
+inurl:"results.php?query="
+inurl:"find.php?keyword="
+site:*.np inurl:"search=" | inurl:"q="
+site:*.in inurl:"query=" | inurl:"find="
 ```
 
-### 💾 Stored XSS Dorks
+### 💾 Stored XSS Dorks  
 ```
-# Persistent XSS in Comments/Forms
-"comment" "post" "stored" filetype:php
-"guestbook" "persistent" filetype:php
-"feedback" "form" "database" filetype:asp
-"message board" "insert" filetype:php
-"forum" "post" "save" filetype:php
-intitle:"add comment" "database" filetype:php
-"testimonial" "submit" filetype:php
+# Persistent XSS in Forms
+inurl:"comment.php" "post comment"
+inurl:"guestbook.php" "add entry" 
+inurl:"feedback.php" "submit feedback"
+inurl:"contact.php" "send message"
+inurl:"forum.php" "new post"
+site:*.edu inurl:"comment" | inurl:"feedback"
 ```
 
 ### 🌐 DOM-Based XSS Dorks
 ```
-# Client-Side XSS
-"document.write" filetype:js
-"innerHTML" filetype:js site:*.edu
-"document.location" filetype:js
-"window.location" filetype:js
-"eval(" filetype:js site:*.com
-"location.hash" filetype:js
-"document.URL" filetype:js
-"window.name" filetype:js
+# Client-Side XSS Detection
+filetype:js intext:"document.write("
+filetype:js intext:"innerHTML =" 
+filetype:js intext:"document.location"
+filetype:js intext:"window.location"
+filetype:js intext:"eval(" 
+site:*.com filetype:js intext:"location.hash"
 ```
 
 ### ⏱️ Time-Based XSS Dorks
 ```
 # Delayed XSS Execution
-"setTimeout" "alert(" filetype:js
-"setInterval" "javascript:" filetype:js
-"delay" "xss" filetype:php
-"async" "script" "load" filetype:html
+filetype:js intext:"setTimeout" intext:"alert("
+filetype:js intext:"setInterval" intext:"javascript:"
+inurl:"js?" intext:"delay" intext:"script"
+filetype:html intext:"async" intext:"script"
 ```
 
 ### 🔄 Blind XSS Dorks
 ```
-# Out-of-Band XSS
-"email" "notification" "html" filetype:php
-"report" "admin" "html" filetype:asp
-"contact" "form" "email" filetype:php
-"feedback" "admin" "notification" filetype:php
-"log" "admin" "panel" filetype:php
+# Out-of-Band XSS Discovery
+inurl:"contact.php" intext:"email" intext:"admin"
+inurl:"report.php" intext:"admin" intext:"notification"  
+inurl:"feedback.php" intext:"email" intext:"send"
+inurl:"support.php" intext:"ticket" intext:"admin"
 ```
+
+---
 
 ## 🌐 HTML Injection Dorks
 
-### 🟢 Easy Level HTML Injection Dorks
+### 🟢 Easy Level HTML Injection Dorks (Beginner)
 ```
-# Basic HTML Injection
-inurl:"name=" "<h1>" filetype:php
-inurl:"title=" "<b>" filetype:asp
-inurl:"comment=" "<i>" filetype:php
-inurl:"message=" "<u>" filetype:html
-"<html>" inurl:"input=" filetype:php
-"<body>" inurl:"text=" filetype:asp
-```
-
-### 🟡 Medium Level HTML Injection Dorks
-```
-# Advanced HTML Tags
-inurl:"content=" "<div>" filetype:php
-inurl:"description=" "<span>" filetype:asp
-inurl:"text=" "<p>" filetype:php
-"<table>" inurl:"data=" filetype:php
-"<form>" inurl:"input=" filetype:html
-"<iframe>" inurl:"url=" filetype:php
-"<meta>" inurl:"content=" filetype:html
+# Basic HTML Tag Injection
+inurl:"name=" filetype:php
+inurl:"title=" filetype:asp
+inurl:"comment=" filetype:php  
+inurl:"message=" filetype:html
+inurl:"description=" filetype:php
 ```
 
-### 🔴 Advanced Level HTML Injection Dorks
+### 🟡 Medium Level HTML Injection Dorks (Intermediate)
 ```
-# Complex HTML Injection
-(inurl:"name=" OR inurl:"title=" OR inurl:"content=") AND ("<div>" OR "<span>" OR "<p>")
-(inurl:"comment=" OR inurl:"message=" OR inurl:"text=") AND ("<html>" OR "<body>" OR "<head>")
+# HTML Tags in Parameters
+inurl:"content=" intext:"<div>" filetype:php
+inurl:"text=" intext:"<span>" filetype:asp
+inurl:"data=" intext:"<p>" filetype:php
+inurl:"html=" intext:"<table>" filetype:php
 ```
 
-### 🚀 Multi-Thread Level HTML Injection Dorks
+### 🔴 Advanced Level HTML Injection Dorks (Expert)
+```
+# Complex HTML Injection Detection
+(inurl:"name=" | inurl:"title=" | inurl:"content=") & (intext:"<div>" | intext:"<span>" | intext:"<p>")
+(inurl:"comment=" | inurl:"message=" | inurl:"text=") & (intext:"<html>" | intext:"<body>" | intext:"<head>")
+```
+
+### 🚀 Multi-Thread Level HTML Injection Dorks (Mass Discovery)
 ```
 # Bulk HTML Injection Discovery
-((inurl:"name=" OR inurl:"title=" OR inurl:"content=" OR inurl:"text=") AND (filetype:php OR filetype:asp OR filetype:html)) "<"
+((inurl:"name=" | inurl:"title=" | inurl:"content=" | inurl:"text=") & (filetype:php | filetype:asp | filetype:html)) -site:github.com
 ```
 
-### 🔥 Crazy Level HTML Injection Dorks
+### 🔥 Crazy Level HTML Injection Dorks (Extreme Discovery)
 ```
-# Extreme HTML Injection Discovery
-(((inurl:"name=" OR inurl:"title=" OR inurl:"content=" OR inurl:"text=" OR inurl:"comment=" OR inurl:"message=") AND ("<html>" OR "<body>" OR "<div>" OR "<span>" OR "<p>" OR "<h1>")) AND (site:*.com OR site:*.org OR site:*.net))
+# Maximum HTML Injection Coverage
+(((inurl:"name=" | inurl:"title=" | inurl:"content=" | inurl:"text=" | inurl:"comment=" | inurl:"message=") & (intext:"<html>" | intext:"<body>" | intext:"<div>" | intext:"<span>" | intext:"<p>" | intext:"<h1>")) & (site:*.com | site:*.org | site:*.net))
 ```
 
 ---
 
 ## 🚀 Remote Code Execution (RCE) Dorks
 
-### 🟢 Easy Level RCE Dorks
+### 🟢 Easy Level RCE Dorks (Beginner)
 ```
-# Basic RCE Patterns
+# Basic Command Execution
 inurl:"cmd=" filetype:php
 inurl:"exec=" filetype:php
 inurl:"system=" filetype:php
-inurl:"shell=" filetype:php
+inurl:"shell=" filetype:php  
 inurl:"command=" filetype:php
-"shell_exec" filetype:php
-"passthru" filetype:php
 ```
 
-### 🟡 Medium Level RCE Dorks
+### 🟡 Medium Level RCE Dorks (Intermediate)
 ```
-# Advanced RCE Functions
-"exec(" filetype:php site:*.edu
-"system(" filetype:php site:*.com
-"shell_exec(" filetype:php
-"passthru(" filetype:php
-"popen(" filetype:php
-"proc_open(" filetype:php
-"eval(" "base64_decode" filetype:php
+# PHP Execution Functions
+intext:"shell_exec(" filetype:php
+intext:"system(" filetype:php site:*.edu
+intext:"exec(" filetype:php
+intext:"passthru(" filetype:php
+intext:"popen(" filetype:php
 ```
 
-### 🔴 Advanced Level RCE Dorks
+### 🔴 Advanced Level RCE Dorks (Expert)
 ```
 # Complex RCE Detection
-(inurl:"cmd=" OR inurl:"exec=" OR inurl:"system=") AND (filetype:php OR filetype:asp OR filetype:jsp)
-("shell_exec" OR "passthru" OR "system") AND ("$_GET" OR "$_POST") filetype:php
+(inurl:"cmd=" | inurl:"exec=" | inurl:"system=") & (filetype:php | filetype:asp | filetype:jsp)
+(intext:"shell_exec" | intext:"passthru" | intext:"system") & (intext:"$_GET" | intext:"$_POST") filetype:php
 ```
 
-### 🚀 Multi-Thread Level RCE Dorks
+### 🚀 Multi-Thread Level RCE Dorks (Mass Discovery)
 ```
 # Bulk RCE Discovery
-((inurl:"cmd=" OR inurl:"exec=" OR inurl:"system=" OR inurl:"shell=") AND (filetype:php OR filetype:asp OR filetype:jsp OR filetype:py)) -site:github.com
+((inurl:"cmd=" | inurl:"exec=" | inurl:"system=" | inurl:"shell=") & (filetype:php | filetype:asp | filetype:jsp | filetype:py)) -site:github.com -site:stackoverflow.com
 ```
 
-### 🔥 Crazy Level RCE Dorks
+### 🔥 Crazy Level RCE Dorks (Extreme Discovery)
 ```
-# Extreme RCE Discovery
-(((inurl:"cmd=" OR inurl:"exec=" OR inurl:"system=" OR inurl:"shell=" OR inurl:"command=") AND ("shell_exec" OR "passthru" OR "system" OR "exec")) AND (filetype:php OR filetype:asp OR filetype:jsp)) -site:github.com -site:stackoverflow.com
+# Maximum RCE Coverage
+(((inurl:"cmd=" | inurl:"exec=" | inurl:"system=" | inurl:"shell=" | inurl:"command=") & (intext:"shell_exec" | intext:"passthru" | intext:"system" | intext:"exec")) & (filetype:php | filetype:asp | filetype:jsp)) -site:github.com -site:stackoverflow.com
 ```
 
-### 💻 Command Execution Functions
+### 💻 Command Execution Function Detection
 ```
-# PHP RCE Functions
-"shell_exec($_GET" filetype:php
-"system($_POST" filetype:php
-"exec($_REQUEST" filetype:php
-"passthru($_COOKIE" filetype:php
-"popen($_SESSION" filetype:php
-"proc_open($_FILES" filetype:php
+# Dangerous PHP Functions
+intext:"shell_exec($_GET" filetype:php
+intext:"system($_POST" filetype:php  
+intext:"exec($_REQUEST" filetype:php
+intext:"passthru($_COOKIE" filetype:php
+intext:"eval(" intext:"base64_decode" filetype:php
 ```
 
 ### 🌐 Web Shell Detection
 ```
 # Web Shell Patterns
-"web shell" filetype:php
-"php shell" filetype:php
-"cmd shell" filetype:asp
-"shell script" filetype:jsp
-"backdoor" filetype:php
-"c99 shell" filetype:php
-"r57 shell" filetype:php
+intext:"web shell" filetype:php
+intext:"php shell" filetype:php
+intext:"cmd shell" filetype:asp
+intext:"c99 shell" filetype:php
+intext:"r57 shell" filetype:php  
+intext:"wso shell" filetype:php
+```
+
+### 🔧 Network Command Tools
+```
+# Network Diagnostic RCE
+inurl:"ping.php" 
+inurl:"traceroute.php"
+inurl:"whois.php"
+intext:"ping" intext:"exec" filetype:php
+intext:"nslookup" filetype:php
 ```
 
 ---
 
-## 🔍 Best Browsers for Google Dorking
+## 📁 LFI/RFI (File Inclusion) Dorks
 
-### 🥇 1. Firefox (Recommended)
+### 🟢 Easy Level LFI/RFI Dorks (Beginner)
 ```
-✅ Best Privacy Controls
-✅ Advanced Search Extensions
-✅ User-Agent Switching
-✅ Cookie Management
-✅ VPN Integration
-✅ Developer Tools
-
-Recommended Extensions:
-- User-Agent Switcher
-- Cookie Quick Manager
-- Privacy Badger
-- uBlock Origin
-- FoxyProxy
-```
-
-### 🥈 2. Brave Browser
-```
-✅ Built-in Tor Integration
-✅ Ad/Tracker Blocking
-✅ Fingerprint Protection
-✅ Privacy-First Design
-✅ Chromium-Based Compatibility
-
-Features:
-- Built-in VPN (Premium)
-- Private Windows with Tor
-- Shield Settings
-- Advanced Privacy Controls
-```
-
-### 🥉 3. Chrome (With Extensions)
-```
-⚠️ Requires Privacy Extensions
-✅ Developer Tools
-✅ Extension Ecosystem
-✅ Sync Capabilities
-
-Required Extensions:
-- Privacy Badger
-- uBlock Origin
-- User-Agent Switcher
-- VPN Extension
-- Cookie Manager
-```
-
-### 4. Microsoft Edge
-```
-⚠️ Privacy Concerns
-✅ InPrivate Mode
-✅ Tracking Prevention
-✅ Collections Feature
-
-Limited Recommendations:
-- Use InPrivate Mode
-- Enable Strict Tracking Prevention
-- Install Privacy Extensions
-```
-
-### 5. Bing Search Engine
-```
-🔍 Alternative Search Results
-✅ Different Indexing
-✅ Unique Dork Patterns
-✅ Less Filtered Results
-
-Bing-Specific Operators:
-- ip: for IP-based searches
-- contains: for file content
-- filetype: works differently
-- site: has variations
-```
-
----
-
-### Local File Inclusion
-```
+# Basic File Inclusion Parameters
 inurl:"page=" filetype:php
 inurl:"file=" filetype:php
 inurl:"path=" filetype:php
 inurl:"include=" filetype:php
 inurl:"inc=" filetype:php
-inurl:"dir=" filetype:php
-inurl:"template=" filetype:php
 ```
 
-### Remote File Inclusion
+### 🟡 Medium Level LFI/RFI Dorks (Intermediate)
 ```
-"allow_url_include" filetype:php
-"allow_url_fopen" filetype:php
-inurl:"http://" inurl:"include"
-inurl:"https://" inurl:"include"
-filetype:php "include($_GET"
-filetype:php "require($_GET"
-```
-
-### Common LFI/RFI Parameters
-```
+# Advanced Inclusion Patterns
 inurl:"index.php?page="
-inurl:"main.php?page="
-inurl:"home.php?page="
-inurl:"view.php?page="
-inurl:"content.php?page="
-inurl:"display.php?page="
+inurl:"main.php?file="
+inurl:"home.php?path="
+inurl:"content.php?include="
+inurl:"template.php?page="
 ```
 
----
-
-## ⚡ Command Injection Dorks
-
-### OS Command Injection
+### 🔴 Advanced Level LFI/RFI Dorks (Expert)
 ```
-inurl:"cmd=" filetype:php
-inurl:"exec=" filetype:php
-inurl:"system=" filetype:php
-inurl:"shell=" filetype:php
-inurl:"command=" filetype:php
-"shell_exec" filetype:php
-"passthru" filetype:php
+# Complex File Inclusion Detection
+(inurl:"page=" | inurl:"file=" | inurl:"path=") & (filetype:php | filetype:asp)
+(inurl:"include=" | inurl:"inc=" | inurl:"template=") & intext:"include"
 ```
 
-### Network Commands
+### 🚀 Multi-Thread Level LFI/RFI Dorks (Mass Discovery)
 ```
-"ping" "traceroute" filetype:php
-intitle:"network tools"
-"network diagnostic" filetype:php
-inurl:"ping.php"
-inurl:"traceroute.php"
-"whois" filetype:php
+# Bulk File Inclusion Discovery
+((inurl:"page=" | inurl:"file=" | inurl:"path=" | inurl:"include=") & (filetype:php | filetype:asp | filetype:jsp)) -site:github.com
 ```
 
-### System Information
+### 🔥 Crazy Level LFI/RFI Dorks (Extreme Discovery)
 ```
-"phpinfo()" filetype:php
-"system info" filetype:php
-"server status" filetype:php
-inurl:"sysinfo" filetype:php
-intitle:"system information"
+# Maximum File Inclusion Coverage
+(((inurl:"page=" | inurl:"file=" | inurl:"path=" | inurl:"include=" | inurl:"inc=" | inurl:"template=") & (filetype:php | filetype:asp | filetype:jsp)) & (site:*.com | site:*.org | site:*.edu))
 ```
 
----
-
-## 🗂️ Directory Traversal Dorks
-
-### Path Traversal Patterns
+### 📂 Local File Inclusion (LFI)
 ```
+# LFI-Specific Patterns
+inurl:"page=" intext:"../../"
+inurl:"file=" intext:"etc/passwd"
+inurl:"path=" intext:"../../../"
+inurl:"include=" intext:"/etc/"
+```
+
+### 🌐 Remote File Inclusion (RFI)
+```
+# RFI Configuration Detection
+intext:"allow_url_include = On" filetype:php
+intext:"allow_url_fopen = On" filetype:php
+inurl:"include=" intext:"http://"
+inurl:"page=" intext:"https://"
+```
+
+### 📄 Directory Traversal
+```
+# Path Traversal Patterns
 inurl:"../" filetype:php
 inurl:"..\\" filetype:asp
-"directory traversal" filetype:php
-inurl:"path=" ".."
-inurl:"dir=" ".."
-filetype:php inurl:"include" ".."
-```
-
-### File Download Vulnerabilities
-```
-inurl:"download.php?file="
-inurl:"get.php?file="
-inurl:"read.php?file="
-inurl:"fetch.php?file="
-filetype:php "readfile"
-```
-
----
-
-## 🔐 Configuration Files & Sensitive Data
-
-### Configuration Files
-```
-filetype:env "DB_PASSWORD"
-filetype:config "password"
-filetype:ini "password"
-filetype:xml "password"
-filetype:conf "password"
-"config.php" filetype:txt
-"database.yml" filetype:txt
-"wp-config.php" filetype:txt
-```
-
-### Environment Files
-```
-".env" filetype:env
-".env.local" filetype:txt
-".env.production" filetype:txt
-"environment.rb" filetype:txt
-filetype:properties "password"
-```
-
-### API Keys and Secrets
-```
-"api_key" filetype:json
-"secret_key" filetype:txt
-"private_key" filetype:txt
-"access_token" filetype:json
-"auth_token" filetype:txt
-"aws_access_key_id" filetype:txt
-"sk-" "openai" filetype:txt
-```
-
----
-
-## 🗄️ Database Exposure Dorks
-
-### Database Files
-```
-filetype:sql "INSERT INTO"
-filetype:sql "CREATE TABLE"
-filetype:sql "password"
-filetype:mdb "password"
-filetype:db "password"
-"dump.sql" filetype:sql
-"backup.sql" filetype:sql
-```
-
-### Database Admin Tools
-```
-intitle:"phpMyAdmin" "Welcome to phpMyAdmin"
-intitle:"Adminer" "Login"
-intitle:"phpPgAdmin"
-"Database Administration" inurl:admin
-"MySQL Admin" filetype:php
-intitle:"SQL Web Data Administrator"
-```
-
-### Database Connection Strings
-```
-"connectionstring" filetype:txt
-"Data Source=" filetype:txt
-"Server=" "Database=" filetype:txt
-"mysql_connect" filetype:php
-"pg_connect" filetype:php
-```
-
----
-
-## 🔑 Login Pages & Admin Panels
-
-### Admin Panels
-```
-intitle:"admin" "login"
-intitle:"administrator" "login"
-inurl:"admin" "login" filetype:php
-inurl:"administrator" filetype:php
-intitle:"control panel" "login"
-"admin panel" "password"
-intitle:"dashboard" "login"
-```
-
-### CMS Admin Areas
-```
-inurl:"wp-admin" "login"
-inurl:"administrator" "joomla"
-inurl:"admin" "drupal"
-"typo3" "login"
-"magento" "admin"
-"prestashop" "admin"
-```
-
-### Default Credentials
-```
-"admin" "admin" "login"
-"root" "root" "login"
-"guest" "guest" "login"
-intitle:"login" "default password"
-"username" "password" "default"
+inurl:"path=" intext:".."
+inurl:"dir=" intext:"../"
 ```
 
 ---
 
 ## 📤 File Upload Vulnerabilities
 
-### 🟢 Easy Level File Upload Dorks
+### 🟢 Easy Level File Upload Dorks (Beginner)
 ```
 # Basic Upload Endpoints
 inurl:"upload.php"
-inurl:"fileupload" filetype:php
+inurl:"fileupload.php" 
 inurl:"file_upload.php"
 inurl:"upload_file.php"
-"choose file" "upload"
 intitle:"file upload"
-"multipart/form-data" "upload"
 ```
 
-### 🟡 Medium Level File Upload Dorks
+### 🟡 Medium Level File Upload Dorks (Intermediate)
 ```
-# Advanced Upload Patterns
-"file upload" "allowed types"
-"upload" "extension" "filter"
-"file upload" "validation"
-"upload" "mime type" "check"
-"image upload" "resize"
-"document upload" "virus scan"
+# Upload with File Types
+inurl:"upload.php" intext:"allowed"
+inurl:"upload" intext:"file type"
+inurl:"upload" intext:"extension"
+inurl:"fileupload" intext:"format"
 ```
 
-### 🔴 Advanced Level File Upload Dorks
+### 🔴 Advanced Level File Upload Dorks (Expert)
 ```
-# Complex Upload Discovery
-(inurl:"upload" OR inurl:"file") AND ("php" OR "asp" OR "jsp") AND ("form" OR "post")
-("file upload" OR "upload file") AND ("allowed" OR "permitted" OR "accepted") filetype:php
+# Complex Upload Detection
+(inurl:"upload" | inurl:"file_upload") & (intext:"php" | intext:"asp" | intext:"jsp")
+(inurl:"upload.php" | inurl:"fileupload.php") & (intext:"allowed" | intext:"permitted")
 ```
 
-### 🚀 Multi-Thread Level File Upload Dorks
+### 🚀 Multi-Thread Level File Upload Dorks (Mass Discovery)
 ```
 # Bulk Upload Discovery
-((inurl:"upload" OR inurl:"file_upload" OR inurl:"fileupload") AND (filetype:php OR filetype:asp OR filetype:jsp)) -site:github.com
+((inurl:"upload" | inurl:"file_upload" | inurl:"fileupload") & (filetype:php | filetype:asp | filetype:jsp)) -site:github.com -site:w3schools.com
 ```
 
-### 🔥 Crazy Level File Upload Dorks
+### 🔥 Crazy Level File Upload Dorks (Extreme Discovery)
 ```
-# Extreme Upload Discovery
-(((inurl:"upload" OR inurl:"file_upload" OR inurl:"fileupload" OR inurl:"file-upload") AND ("form" OR "post" OR "multipart")) AND (filetype:php OR filetype:asp OR filetype:jsp OR filetype:html)) -site:github.com -site:w3schools.com
+# Maximum Upload Coverage
+(((inurl:"upload" | inurl:"file_upload" | inurl:"fileupload" | inurl:"file-upload") & (intext:"form" | intext:"post" | intext:"multipart")) & (filetype:php | filetype:asp | filetype:jsp | filetype:html)) -site:github.com -site:w3schools.com
 ```
 
 ### 📷 Image Upload Vulnerabilities
 ```
-# Image-Specific Upload
-"image upload" filetype:php
-"photo upload" filetype:php
-"avatar upload" filetype:php
-inurl:"img_upload" filetype:php
-"profile picture" "upload"
-"gallery" "upload" "image"
-"jpeg" "png" "gif" "upload" filetype:php
+# Image-Specific Upload Endpoints
+inurl:"image_upload.php"
+inurl:"photo_upload.php"  
+inurl:"avatar_upload.php"
+inurl:"picture_upload.php"
+intext:"image upload" filetype:php
 ```
 
 ### 📄 Document Upload Vulnerabilities
 ```
 # Document Upload Endpoints
-"document upload" filetype:php
-"file manager" "upload"
-"resume upload" filetype:php
-"CV upload" filetype:php
-"attachment" "upload"
-"pdf" "doc" "docx" "upload" filetype:php
-"excel" "csv" "upload" filetype:php
+inurl:"document_upload.php"
+inurl:"file_manager.php" intext:"upload"
+inurl:"resume_upload.php"
+inurl:"cv_upload.php"
+intext:"document upload" filetype:php
 ```
 
 ### 🎵 Media Upload Vulnerabilities
 ```
-# Audio/Video Upload
-"media upload" filetype:php
-"video upload" filetype:php
-"audio upload" filetype:php
-"mp3" "mp4" "upload" filetype:php
-"streaming" "upload" filetype:php
-```
-
-### 🗜️ Archive Upload Vulnerabilities
-```
-# Compressed File Upload
-"zip upload" filetype:php
-"rar upload" filetype:php
-"archive upload" filetype:php
-"compressed" "file" "upload" filetype:php
-"tar" "gz" "upload" filetype:php
+# Media File Upload
+inurl:"media_upload.php"
+inurl:"video_upload.php"
+inurl:"audio_upload.php"
+intext:"media upload" filetype:php
+intext:"mp3 upload" | intext:"mp4 upload"
 ```
 
 ### ⚠️ Unrestricted File Upload
 ```
 # Dangerous Upload Patterns
-"upload" "any file type" filetype:php
-"upload" "no restriction" filetype:php
-"file upload" "all formats" filetype:php
-"upload" "exe" "allowed" filetype:php
-"unrestricted" "file upload" filetype:php
+intext:"upload any file" filetype:php
+intext:"no file restrictions" filetype:php
+intext:"all file types allowed" filetype:php  
+inurl:"upload" intext:"exe allowed"
 ```
 
-### 🔍 File Upload with Path Disclosure
+### 🔍 Upload Path Disclosure
 ```
-# Upload Path Information
-"upload" "directory" "path" filetype:php
-"file uploaded to" filetype:php
-"upload successful" "location" filetype:php
-"uploaded files" "folder" filetype:php
-"upload path" "configuration" filetype:php
-```
-
-### 💾 File Upload with Database Storage
-```
-# Database-Integrated Upload
-"upload" "database" "store" filetype:php
-"file upload" "mysql" "insert" filetype:php
-"upload" "blob" "database" filetype:php
-"file" "upload" "sql" "table" filetype:php
+# Upload Directory Information
+intext:"file uploaded to" filetype:php
+intext:"upload successful" intext:"path"
+intext:"uploaded to directory" filetype:php
+inurl:"upload" intext:"folder created"
 ```
 
-### 🔐 File Upload Bypass Techniques Discovery
+---
+
+## 🔐 Configuration Files & Sensitive Data
+
+### 🟢 Easy Level Configuration Dorks (Beginner)
 ```
-# Upload Filter Bypass Information
-"upload" "bypass" "filter" filetype:php
-"file upload" "double extension" filetype:php
-"upload" "null byte" filetype:php
-"mime type" "bypass" "upload" filetype:php
-"upload" "content-type" "spoof" filetype:php
+# Basic Configuration Files
+filetype:env
+filetype:config
+filetype:ini
+filetype:conf
+filetype:xml intext:"password"
 ```
 
-### 🖼️ File Upload with Preview/Display
+### 🟡 Medium Level Configuration Dorks (Intermediate)
 ```
-# Upload with File Display
-"upload" "preview" "display" filetype:php
-"file upload" "thumbnail" filetype:php
-"upload" "gallery" "view" filetype:php
-"uploaded files" "list" "view" filetype:php
-"file browser" "upload" filetype:php
-```
-
-### 📊 File Upload Statistics/Logs
-```
-# Upload Monitoring/Logging
-"upload log" filetype:log
-"file upload" "statistics" filetype:php
-"upload" "monitor" "track" filetype:php
-"uploaded files" "log" filetype:txt
-"upload activity" "report" filetype:php
+# Environment Files with Passwords
+filetype:env intext:"DB_PASSWORD"
+filetype:env intext:"API_KEY"
+filetype:config intext:"password"
+filetype:ini intext:"mysql"
+filetype:xml intext:"database"
 ```
 
-### 🔄 Bulk File Upload
+### 🔴 Advanced Level Configuration Dorks (Expert)
 ```
-# Multiple File Upload
-"bulk upload" filetype:php
-"multiple file upload" filetype:php
-"batch upload" filetype:php
-"mass upload" filetype:php
-"drag and drop" "upload" filetype:php
+# Complex Configuration Discovery
+(filetype:env | filetype:config | filetype:ini) & (intext:"password" | intext:"secret" | intext:"key")
+(filetype:xml | filetype:json | filetype:yml) & (intext:"database" | intext:"mysql" | intext:"api")
 ```
 
-### ☁️ Cloud File Upload Integration
+### 🚀 Multi-Thread Level Configuration Dorks (Mass Discovery)
 ```
-# Cloud Storage Upload
-"upload" "aws" "s3" filetype:php
-"file upload" "google drive" filetype:php
-"upload" "dropbox" "api" filetype:php
-"cloud upload" "storage" filetype:php
-"upload" "azure" "blob" filetype:php
+# Bulk Configuration Discovery
+((filetype:env | filetype:config | filetype:ini | filetype:xml) & (intext:"password" | intext:"secret")) -site:github.com
 ```
 
-### 🔧 File Upload Configuration Files
+### 🔥 Crazy Level Configuration Dorks (Extreme Discovery)
 ```
-# Upload Configuration Exposure
-"upload.conf" filetype:conf
-"upload_config.php" filetype:txt
-"file_upload.ini" filetype:ini
-"upload_settings.xml" filetype:xml
-"upload" "configuration" "file" filetype:json
+# Maximum Configuration Coverage
+(((filetype:env | filetype:config | filetype:ini | filetype:xml | filetype:json | filetype:yml) & (intext:"password" | intext:"secret" | intext:"key" | intext:"token")) & (site:*.com | site:*.org | site:*.net))
+```
+
+### 💾 Database Configuration Files
+```
+# Database Config Exposure
+"wp-config.php" filetype:txt
+"database.yml" intext:"password"
+"config.php" intext:"mysql_connect"
+"db_config.php" filetype:txt
+"connection.php" intext:"password"
+```
+
+### 🔑 API Keys and Secrets
+```
+# API Key Exposure
+intext:"api_key" filetype:json
+intext:"secret_key" filetype:txt
+intext:"private_key" filetype:pem
+intext:"access_token" filetype:json
+intext:"auth_token" filetype:txt
+```
+
+### ☁️ Cloud Configuration
+```
+# AWS/Cloud Configuration
+intext:"aws_access_key_id" filetype:txt
+intext:"aws_secret_access_key" filetype:txt  
+intext:"GOOGLE_APPLICATION_CREDENTIALS" filetype:json
+intext:"azure_client_secret" filetype:txt
+```
+
+---
+
+## 🗄️ Database Exposure Dorks
+
+### 🟢 Easy Level Database Dorks (Beginner)
+```
+# Basic Database Files
+filetype:sql
+filetype:db
+filetype:mdb
+filetype:sqlite
+filetype:dump
+```
+
+### 🟡 Medium Level Database Dorks (Intermediate)
+```
+# Database Files with Content
+filetype:sql intext:"INSERT INTO"
+filetype:sql intext:"CREATE TABLE"
+filetype:sql intext:"password"
+filetype:db intext:"users"
+filetype:dump intext:"mysql"
+```
+
+### 🔴 Advanced Level Database Dorks (Expert)
+```
+# Complex Database Discovery
+(filetype:sql | filetype:db | filetype:sqlite) & (intext:"password" | intext:"users" | intext:"admin")
+(filetype:dump | filetype:backup) & (intext:"mysql" | intext:"database")
+```
+
+### 🚀 Multi-Thread Level Database Dorks (Mass Discovery)
+```
+# Bulk Database Discovery
+((filetype:sql | filetype:db | filetype:sqlite | filetype:dump) & (intext:"password" | intext:"users")) -site:github.com
+```
+
+### 🔥 Crazy Level Database Dorks (Extreme Discovery)
+```
+# Maximum Database Coverage
+(((filetype:sql | filetype:db | filetype:sqlite | filetype:dump | filetype:backup) & (intext:"INSERT INTO" | intext:"CREATE TABLE" | intext:"password" | intext:"users" | intext:"admin")) & (site:*.com | site:*.org | site:*.edu))
+```
+
+### 🗄️ Database Admin Tools
+```
+# Database Management Interfaces
+intitle:"phpMyAdmin" "Welcome to phpMyAdmin"
+intitle:"Adminer" "Login"  
+intitle:"phpPgAdmin"
+intitle:"SQL Web Data Administrator"
+intitle:"MySQL Admin" filetype:php
+```
+
+### 💾 Database Backup Files
+```
+# Database Backup Discovery
+"backup.sql" filetype:sql
+"dump.sql" filetype:sql
+"database.sql" filetype:sql
+"db_backup" filetype:sql
+"mysqldump" filetype:sql
+site:*.edu filetype:sql intext:"CREATE TABLE"
+```
+
+### 🔗 Database Connection Strings
+```
+# Connection String Exposure
+intext:"connectionstring" filetype:txt
+intext:"Data Source=" filetype:config
+intext:"Server=" intext:"Database=" filetype:txt
+intext:"mysql_connect(" filetype:php
+intext:"pg_connect(" filetype:php
+```
+
+---
+
+## 🔑 Login Pages & Admin Panels
+
+### 🟢 Easy Level Login Dorks (Beginner)
+```
+# Basic Login Pages
+intitle:"login"
+intitle:"admin login"
+intitle:"administrator login"
+inurl:"login.php"
+inurl:"admin.php"
+```
+
+### 🟡 Medium Level Login Dorks (Intermediate)
+```
+# Advanced Login Discovery
+intitle:"admin panel" "login"
+intitle:"control panel" "login"
+intitle:"dashboard" "login"
+inurl:"admin" filetype:php
+inurl:"administrator" filetype:asp
+```
+
+### 🔴 Advanced Level Login Dorks (Expert)
+```
+# Complex Login Detection
+(intitle:"admin" | intitle:"administrator") & (intext:"login" | intext:"password")
+(inurl:"admin" | inurl:"login") & (filetype:php | filetype:asp | filetype:jsp)
+```
+
+### 🚀 Multi-Thread Level Login Dorks (Mass Discovery)
+```
+# Bulk Login Discovery
+((intitle:"admin" | intitle:"login" | intitle:"administrator") & (filetype:php | filetype:asp)) -site:github.com
+```
+
+### 🔥 Crazy Level Login Dorks (Extreme Discovery)
+```
+# Maximum Login Coverage
+(((intitle:"admin" | intitle:"login" | intitle:"administrator" | intitle:"control panel") & (intext:"username" | intext:"password" | intext:"login")) & (filetype:php | filetype:asp | filetype:jsp))
+```
+
+### 🖥️ CMS Admin Areas
+```
+# Content Management System Logins
+inurl:"wp-admin" "WordPress"
+inurl:"administrator" "Joomla"
+inurl:"admin" "Drupal"  
+inurl:"typo3" "login"
+inurl:"admin" "Magento"
+```
+
+### 🔐 Default Credential Hints
+```
+# Default Login Information
+intitle:"login" intext:"admin" intext:"admin"
+intitle:"login" intext:"root" intext:"root"
+intitle:"login" intext:"guest" intext:"guest"
+intitle:"default password" intext:"admin"
+```
+
+### 🏢 Corporate Login Panels
+```
+# Enterprise Login Systems
+intitle:"employee login"
+intitle:"staff login"
+intitle:"corporate login"
+intitle:"intranet login"
+intitle:"portal login"
 ```
 
 ---
 
 ## 🏠 IoT & Network Devices
 
-### Router Interfaces
+### 🟢 Easy Level IoT Dorks (Beginner)
 ```
-intitle:"router" "login"
-"Router Configuration" "password"
-intitle:"wireless" "setup"
-"ADSL" "configuration"
-intitle:"modem" "status"
-"DD-WRT" "login"
-"OpenWrt" "login"
-```
-
-### Network Printers
-```
-intitle:"printer" "configuration"
-"Printer Status" inurl:printer
-"HP LaserJet" "configuration"
-"Canon" "printer" "status"
-"Epson" "network" "printer"
+# Basic IoT Device Discovery
+intitle:"router login"
+intitle:"camera view"
+intitle:"printer status"
+intitle:"modem configuration"
+intitle:"device management"
 ```
 
-### IoT Devices
+### 🟡 Medium Level IoT Dorks (Intermediate)
 ```
-"IoT" "device" "login"
+# Advanced IoT Discovery
+intitle:"wireless router" "configuration"
+intitle:"IP camera" "login"
+intitle:"network printer" "status"
 intitle:"smart home" "control"
-"thermostat" "login"
-"security camera" "login"
-"home automation" "admin"
+intitle:"IoT device" "management"
+```
+
+### 🔴 Advanced Level IoT Dorks (Expert)
+```
+# Complex IoT Detection
+(intitle:"router" | intitle:"camera" | intitle:"printer") & (intext:"login" | intext:"admin")
+(intitle:"IoT" | intitle:"smart") & (intext:"device" | intext:"control" | intext:"management")
+```
+
+### 🚀 Multi-Thread Level IoT Dorks (Mass Discovery)
+```
+# Bulk IoT Discovery
+((intitle:"router" | intitle:"camera" | intitle:"printer" | intitle:"modem") & (intext:"login" | intext:"configuration")) -site:github.com
+```
+
+### 🔥 Crazy Level IoT Dorks (Extreme Discovery)
+```
+# Maximum IoT Coverage
+(((intitle:"router" | intitle:"camera" | intitle:"printer" | intitle:"modem" | intitle:"IoT" | intitle:"smart") & (intext:"login" | intext:"admin" | intext:"configuration" | intext:"management")) & (site:*.com | site:*.net))
+```
+
+### 🌐 Router Interfaces
+```
+# Router Admin Panels
+intitle:"DD-WRT" "router"
+intitle:"OpenWrt" "configuration"
+intitle:"pfSense" "login"
+intitle:"MikroTik" "router"
+intitle:"Cisco" "router" "login"
+```
+
+### 🖨️ Network Printers
+```
+# Printer Web Interfaces
+intitle:"HP LaserJet" "configuration"
+intitle:"Canon" "network printer"
+intitle:"Epson" "printer" "status"
+intitle:"Brother" "printer" "setup"
+```
+
+### 📡 Surveillance Systems
+```
+# Security Camera Systems
+intitle:"security camera" "login"
+intitle:"CCTV" "viewer"
+intitle:"surveillance" "system"
+intitle:"DVR" "login"
+intitle:"NVR" "system"
 ```
 
 ---
 
 ## 📹 Web Cameras & Surveillance
 
-### IP Cameras
+### 🟢 Easy Level Camera Dorks (Beginner)
 ```
-intitle:"webcam" "live"
-intitle:"camera" "view"
-"mjpg" "video" "stream"
-"axis camera" "view"
+# Basic Camera Discovery
+intitle:"webcam"
+intitle:"camera view"  
+intitle:"live view"
+intitle:"video stream"
+intitle:"IP camera"
+```
+
+### 🟡 Medium Level Camera Dorks (Intermediate)
+```
+# Advanced Camera Discovery
+intitle:"webcam" "live view"
+intitle:"IP camera" "viewer"
+intitle:"security camera" "login"
+intitle:"CCTV" "live"
+intitle:"surveillance" "camera"
+```
+
+### 🔴 Advanced Level Camera Dorks (Expert)
+```
+# Complex Camera Detection
+(intitle:"webcam" | intitle:"camera" | intitle:"CCTV") & (intext:"live" | intext:"view" | intext:"stream")
+(intitle:"IP camera" | intitle:"security camera") & (intext:"login" | intext:"admin")
+```
+
+### 🚀 Multi-Thread Level Camera Dorks (Mass Discovery)
+```
+# Bulk Camera Discovery
+((intitle:"webcam" | intitle:"camera" | intitle:"CCTV" | intitle:"surveillance") & (intext:"live" | intext:"view")) -site:github.com
+```
+
+### 🔥 Crazy Level Camera Dorks (Extreme Discovery)
+```
+# Maximum Camera Coverage
+(((intitle:"webcam" | intitle:"camera" | intitle:"CCTV" | intitle:"surveillance" | intitle:"IP camera") & (intext:"live" | intext:"view" | intext:"stream" | intext:"monitor")) & (site:*.com | site:*.org))
+```
+
+### 📺 Live Streaming Cameras
+```
+# Public Camera Streams
 inurl:"ViewerFrame?Mode="
 inurl:"MultiCameraFrame?Mode="
 intitle:"Live View" "AXIS"
+intitle:"Network Camera" "Live"
+inurl:"video.cgi"
 ```
 
-### Surveillance Systems
+### 🏢 Corporate Surveillance
 ```
-"surveillance" "camera" "login"
-intitle:"security camera"
-"CCTV" "viewer"
-"IP Camera" "login"
-"video surveillance" "web"
-"DVR" "login"
+# Business Security Systems
+intitle:"office camera" "live"
+intitle:"building security" "camera"
+intitle:"parking camera" "view"
+intitle:"entrance camera" "monitor"
 ```
 
-### Streaming Servers
+### 🏠 Home Security Cameras
 ```
-"streaming server" "admin"
-"media server" "login"
-"rtmp" "streaming"
-"live stream" "control"
+# Residential Camera Systems
+intitle:"home camera" "view"
+intitle:"baby monitor" "camera"
+intitle:"pet camera" "live"
+intitle:"driveway camera" "monitor"
 ```
 
 ---
 
 ## 🔌 API Endpoints
 
-### REST APIs
+### 🟢 Easy Level API Dorks (Beginner)
 ```
-inurl:"api/v1"
-inurl:"api/v2"
+# Basic API Discovery
+inurl:"/api/"
 inurl:"/rest/"
 inurl:"/graphql"
-"api documentation" filetype:json
-"swagger" "api"
-"openapi" filetype:json
+inurl:"/v1/"
+inurl:"/v2/"
 ```
 
-### API Keys in URLs
+### 🟡 Medium Level API Dorks (Intermediate)
 ```
+# API Documentation Discovery
+inurl:"/api/" "documentation"
+inurl:"/api/" "swagger"
+inurl:"/api/" "openapi"
+inurl:"/rest/" "json"
+inurl:"/graphql" "schema"
+```
+
+### 🔴 Advanced Level API Dorks (Expert)
+```
+# Complex API Detection
+(inurl:"/api/" | inurl:"/rest/" | inurl:"/graphql") & (intext:"json" | intext:"xml" | intext:"swagger")
+(inurl:"/v1/" | inurl:"/v2/" | inurl:"/v3/") & (intext:"endpoint" | intext:"documentation")
+```
+
+### 🚀 Multi-Thread Level API Dorks (Mass Discovery)
+```
+# Bulk API Discovery
+((inurl:"/api/" | inurl:"/rest/" | inurl:"/graphql" | inurl:"/v1/") & (filetype:json | intext:"swagger")) -site:github.com
+```
+
+### 🔥 Crazy Level API Dorks (Extreme Discovery)
+```
+# Maximum API Coverage
+(((inurl:"/api/" | inurl:"/rest/" | inurl:"/graphql" | inurl:"/v1/" | inurl:"/v2/") & (intext:"json" | intext:"xml" | intext:"swagger" | intext:"openapi")) & (site:*.com | site:*.org))
+```
+
+### 🔑 API Keys in URLs
+```
+# Exposed API Keys
 inurl:"api_key="
 inurl:"apikey="
 inurl:"access_token="
 inurl:"auth_token="
-"bearer" inurl:"api"
+inurl:"bearer="
 ```
 
-### API Endpoints
+### 📊 API Documentation
 ```
-"/api/users"
-"/api/admin"
-"/api/auth"
-"/api/login"
-"/api/register"
-"/api/config"
-"/api/debug"
-```
-
----
-
-## 📊 Version Disclosure
-
-### Server Information
-```
-"Server: Apache" filetype:txt
-"Server: nginx" filetype:txt
-"X-Powered-By: PHP" filetype:txt
-"Server: Microsoft-IIS" filetype:txt
-intitle:"Apache" "server status"
+# API Doc Discovery
+intitle:"API Documentation"
+intitle:"REST API"
+intitle:"GraphQL Playground"
+intitle:"Swagger UI"
+intitle:"OpenAPI"
 ```
 
-### Application Versions
+### 🔍 API Endpoints by Function
 ```
-"WordPress" "version" filetype:txt
-"Joomla" "version" filetype:txt
-"Drupal" "version" filetype:txt
-"Laravel" "version" filetype:txt
-"CodeIgniter" filetype:txt
-```
-
-### Framework Detection
-```
-"Powered by" "framework"
-"Built with" "version"
-"generator" "meta" "version"
-"/assets/" "version" filetype:js
+# Functional API Discovery
+inurl:"/api/users"
+inurl:"/api/admin"
+inurl:"/api/auth"
+inurl:"/api/login"
+inurl:"/api/config"
+inurl:"/api/debug"
 ```
 
 ---
 
 ## 💾 Backup Files
 
-### Backup File Extensions
+### 🟢 Easy Level Backup Dorks (Beginner)
 ```
-filetype:bak "password"
-filetype:backup "database"
-filetype:old "config"
-filetype:orig "password"
-filetype:tmp "password"
-site:*.edu filetype:bak
+# Basic Backup Files
+filetype:bak
+filetype:backup  
+filetype:old
+filetype:orig
+filetype:tmp
 ```
 
-### Database Backups
+### 🟡 Medium Level Backup Dorks (Intermediate)
 ```
+# Backup Files with Content
+filetype:bak intext:"password"
+filetype:backup intext:"database"
+filetype:old intext:"config"
+filetype:tmp intext:"mysql"
+filetype:orig intext:"admin"
+```
+
+### 🔴 Advanced Level Backup Dorks (Expert)
+```
+# Complex Backup Detection
+(filetype:bak | filetype:backup | filetype:old) & (intext:"password" | intext:"database" | intext:"config")
+(filetype:tmp | filetype:orig | filetype:save) & (intext:"admin" | intext:"mysql" | intext:"users")
+```
+
+### 🚀 Multi-Thread Level Backup Dorks (Mass Discovery)
+```
+# Bulk Backup Discovery
+((filetype:bak | filetype:backup | filetype:old | filetype:tmp) & (intext:"password" | intext:"config")) -site:github.com
+```
+
+### 🔥 Crazy Level Backup Dorks (Extreme Discovery)
+```
+# Maximum Backup Coverage
+(((filetype:bak | filetype:backup | filetype:old | filetype:tmp | filetype:orig) & (intext:"password" | intext:"database" | intext:"config" | intext:"admin")) & (site:*.com | site:*.edu | site:*.org))
+```
+
+### 🗜️ Archive Backup Files
+```
+# Compressed Backup Discovery
+filetype:zip intext:"backup"
+filetype:rar intext:"backup"
+filetype:tar intext:"backup"
+filetype:7z intext:"backup"
+filetype:gz intext:"backup"
+```
+
+### 💾 Database Backup Files
+```
+# Database Backup Discovery
 "backup.sql" filetype:sql
 "dump.sql" filetype:sql
-"database.sql" filetype:sql
+"database_backup" filetype:sql
 "db_backup" filetype:sql
-filetype:sql "mysqldump"
+"mysql_backup" filetype:sql
 ```
 
-### Archive Files
+### 🗂️ Configuration Backup Files
 ```
-filetype:zip "backup"
-filetype:rar "backup"
-filetype:tar "backup"
-filetype:7z "backup"
-"backup" filetype:gz
+# Config Backup Discovery
+"config.bak" filetype:bak
+"wp-config.bak" filetype:bak
+"database.bak" filetype:bak
+"settings.backup" filetype:backup
 ```
 
 ---
 
 ## 📝 Log Files
 
-### Server Logs
+### 🟢 Easy Level Log Dorks (Beginner)
 ```
-filetype:log "error"
-filetype:log "access"
+# Basic Log Files
+filetype:log
+filetype:txt intext:"log"
+intitle:"log" filetype:txt
+inurl:"log" filetype:txt
+inurl:"logs" filetype:log
+```
+
+### 🟡 Medium Level Log Dorks (Intermediate)
+```
+# Specific Log Types
+filetype:log intext:"error"
+filetype:log intext:"access"
+filetype:log intext:"debug"
+filetype:log intext:"exception"
+filetype:log intext:"warning"
+```
+
+### 🔴 Advanced Level Log Dorks (Expert)
+```
+# Complex Log Detection
+(filetype:log | filetype:txt) & (intext:"error" | intext:"exception" | intext:"debug")
+(inurl:"log" | inurl:"logs") & (intext:"admin" | intext:"password" | intext:"login")
+```
+
+### 🚀 Multi-Thread Level Log Dorks (Mass Discovery)
+```
+# Bulk Log Discovery
+((filetype:log | filetype:txt) & (intext:"error" | intext:"access" | intext:"debug")) -site:github.com
+```
+
+### 🔥 Crazy Level Log Dorks (Extreme Discovery)
+```
+# Maximum Log Coverage
+(((filetype:log | filetype:txt) & (intext:"error" | intext:"access" | intext:"debug" | intext:"exception" | intext:"warning")) & (site:*.com | site:*.org | site:*.edu))
+```
+
+### 🖥️ Server Log Files
+```
+# Server-Specific Logs
 "error.log" filetype:log
 "access.log" filetype:log
 "server.log" filetype:log
-filetype:log "exception"
+"apache.log" filetype:log
+"nginx.log" filetype:log
 ```
 
-### Application Logs
+### 💻 Application Log Files
 ```
+# Application-Specific Logs
 "debug.log" filetype:log
 "app.log" filetype:log
 "application.log" filetype:log
 "laravel.log" filetype:log
-"rails.log" filetype:log
+"php.log" filetype:log
 ```
 
-### Security Logs
+### 🔒 Security Log Files
 ```
+# Security-Related Logs
 "security.log" filetype:log
 "auth.log" filetype:log
 "firewall.log" filetype:log
-"intrusion" filetype:log
+"intrusion.log" filetype:log
+"audit.log" filetype:log
 ```
 
 ---
 
 ## 🧪 Development & Testing
 
-### Development Environments
+### 🟢 Easy Level Development Dorks (Beginner)
 ```
-"development" "environment"
-"staging" "server"
-"test" "server"
+# Basic Development Environments
+inurl:"dev"
+inurl:"test"
+inurl:"staging"
+inurl:"beta"
+inurl:"demo"
+```
+
+### 🟡 Medium Level Development Dorks (Intermediate)
+```
+# Development Environment Detection
 inurl:"dev" filetype:php
-inurl:"beta" filetype:php
-"localhost" filetype:php
+inurl:"test" filetype:asp
+inurl:"staging" filetype:jsp
+inurl:"beta" intext:"development"
+inurl:"demo" intext:"test"
 ```
 
-### Debug Information
+### 🔴 Advanced Level Development Dorks (Expert)
 ```
-"debug" "true" filetype:php
-"debug mode" "on"
-"error_reporting" "E_ALL"
-"display_errors" "On"
-"var_dump" filetype:php
+# Complex Development Detection
+(inurl:"dev" | inurl:"test" | inurl:"staging") & (filetype:php | filetype:asp | filetype:jsp)
+(inurl:"beta" | inurl:"demo" | inurl:"localhost") & (intext:"development" | intext:"debug")
 ```
 
-### Git Repositories
+### 🚀 Multi-Thread Level Development Dorks (Mass Discovery)
 ```
-".git" "directory"
-".git/config" filetype:txt
-"git" "repository" "clone"
+# Bulk Development Discovery
+((inurl:"dev" | inurl:"test" | inurl:"staging" | inurl:"beta") & (filetype:php | filetype:asp)) -site:github.com
+```
+
+### 🔥 Crazy Level Development Dorks (Extreme Discovery)
+```
+# Maximum Development Coverage
+(((inurl:"dev" | inurl:"test" | inurl:"staging" | inurl:"beta" | inurl:"demo") & (filetype:php | filetype:asp | filetype:jsp)) & (site:*.com | site:*.org))
+```
+
+### 🐛 Debug Information
+```
+# Debug Mode Detection
+intext:"debug" intext:"true" filetype:php
+intext:"error_reporting" intext:"E_ALL"
+intext:"display_errors" intext:"On"
+intext:"debug mode" intext:"enabled"
+```
+
+### 📁 Git Repository Exposure
+```
+# Git Repository Discovery
 inurl:"/.git/"
-filetype:git
+intitle:"Index of /.git"
+".git/config" filetype:txt
+".git/HEAD" filetype:txt
+inurl:".git" intext:"repository"
+```
+
+### 🔧 Configuration Files in Development
+```
+# Development Config Files
+".env" filetype:env
+".env.local" filetype:txt
+"config.dev" filetype:txt
+"settings.test" filetype:txt
+"debug.config" filetype:config
 ```
 
 ---
 
 ## 🛒 E-commerce Vulnerabilities
 
-### Shopping Carts
+### 🟢 Easy Level E-commerce Dorks (Beginner)
 ```
-"shopping cart" "admin"
-"e-commerce" "admin"
-"online store" "admin"
-"magento" "admin"
-"woocommerce" "admin"
-"shopify" "admin"
-```
-
-### Payment Processing
-```
-"payment" "gateway" "test"
-"credit card" "processing"
-"paypal" "integration"
-"stripe" "api"
-"payment" "debug"
+# Basic E-commerce Discovery
+inurl:"shop"
+inurl:"store"
+inurl:"cart"
+inurl:"checkout"
+inurl:"product"
 ```
 
-### Order Systems
+### 🟡 Medium Level E-commerce Dorks (Intermediate)
 ```
-"order" "management" "admin"
-"inventory" "system" "admin"
-"product" "catalog" "admin"
+# E-commerce Platform Detection
+inurl:"shop" "admin"
+inurl:"store" "login"
+inurl:"magento" "admin"
+inurl:"woocommerce" "admin"
+inurl:"shopify" "admin"
+```
+
+### 🔴 Advanced Level E-commerce Dorks (Expert)
+```
+# Complex E-commerce Detection
+(inurl:"shop" | inurl:"store" | inurl:"cart") & (intext:"admin" | intext:"login")
+(inurl:"magento" | inurl:"woocommerce" | inurl:"prestashop") & intext:"admin"
+```
+
+### 🚀 Multi-Thread Level E-commerce Dorks (Mass Discovery)
+```
+# Bulk E-commerce Discovery
+((inurl:"shop" | inurl:"store" | inurl:"cart" | inurl:"product") & (intext:"admin" | intext:"login")) -site:github.com
+```
+
+### 🔥 Crazy Level E-commerce Dorks (Extreme Discovery)
+```
+# Maximum E-commerce Coverage
+(((inurl:"shop" | inurl:"store" | inurl:"cart" | inurl:"product" | inurl:"checkout") & (intext:"admin" | intext:"login" | intext:"dashboard")) & (site:*.com | site:*.net))
+```
+
+### 💳 Payment Processing
+```
+# Payment Gateway Discovery
+inurl:"payment" "gateway"
+inurl:"checkout" "payment"
+intext:"stripe" "api"
+intext:"paypal" "integration"
+intext:"credit card" "processing"
+```
+
+### 📦 Order Management
+```
+# Order System Discovery
+inurl:"order" "management"
+inurl:"orders" "admin"
+inurl:"inventory" "system"
+inurl:"product" "catalog"
+```
+
+### 🏪 Shopping Cart Systems
+```
+# Shopping Cart Discovery
+intext:"shopping cart" "admin"
+intext:"add to cart" filetype:php
+inurl:"cart.php"
+inurl:"basket.php"
+inurl:"shopping.php"
 ```
 
 ---
 
 ## 🎓 Educational Resources
 
-### Deliberately Vulnerable Applications
+### 🟢 Easy Level Educational Dorks (Beginner)
 ```
+# Basic Educational Sites
+site:*.edu
 site:testphp.vulnweb.com
 site:demo.testfire.net
-"damn vulnerable web application"
-"webgoat" "deliberately vulnerable"
-"mutillidae" "vulnerable"
-"bwapp" "buggy web application"
+intitle:"deliberately vulnerable"
+intitle:"intentionally vulnerable"
 ```
 
-### Security Training Sites
+### 🟡 Medium Level Educational Dorks (Intermediate)
 ```
-site:*.edu "penetration testing"
-site:*.edu "ethical hacking"
-"cybersecurity" "lab" site:*.edu
-"vulnerability" "assessment" site:*.edu
+# Educational Vulnerable Applications
+site:*.edu intext:"vulnerable"
+site:*.edu intext:"penetration testing"
+site:*.edu intext:"ethical hacking"
+"damn vulnerable web application"
+"webgoat" "deliberately vulnerable"
+```
+
+### 🔴 Advanced Level Educational Dorks (Expert)
+```
+# Complex Educational Discovery
+(site:*.edu | site:*.org) & (intext:"vulnerable" | intext:"security testing")
+(intext:"deliberately vulnerable" | intext:"intentionally vulnerable") & (filetype:php | filetype:asp)
+```
+
+### 🚀 Multi-Thread Level Educational Dorks (Mass Discovery)
+```
+# Bulk Educational Discovery
+((site:*.edu | site:*.org) & (intext:"vulnerable" | intext:"security" | intext:"testing")) -site:github.com
+```
+
+### 🔥 Crazy Level Educational Dorks (Extreme Discovery)
+```
+# Maximum Educational Coverage
+(((site:*.edu | site:*.org | site:*.ac.*) & (intext:"vulnerable" | intext:"security" | intext:"penetration testing" | intext:"ethical hacking")) & (filetype:php | filetype:asp | filetype:jsp))
+```
+
+### 🏫 Security Training Platforms
+```
+# Security Learning Sites
+"mutillidae" "vulnerable"
+"bwapp" "buggy web application"
+"dvwa" "damn vulnerable"
+"vulnhub" "vulnerable"
+"hackthebox" "penetration testing"
+```
+
+### 📚 Cybersecurity Labs
+```
+# Academic Security Labs
+site:*.edu "cybersecurity" "lab"
+site:*.edu "information security" "course"
+site:*.edu "penetration testing" "lab"
+site:*.ac.* "ethical hacking"
+```
+
+### 🔬 Research Environments
+```
+# Security Research Sites
+site:*.edu "vulnerability research"
+site:*.org "security research"
+site:*.edu "exploit development"
+site:*.edu "malware analysis"
 ```
 
 ---
 
 ## 🛠️ Advanced Search Techniques
 
-### Combining Operators
+### 🔍 Search Operator Combinations
 ```
-# Multiple conditions
-(inurl:"admin" OR inurl:"login") AND filetype:php
+# Logical OR Combinations
+(inurl:"admin" | inurl:"login") & filetype:php
+(intext:"mysql" | intext:"sql" | intext:"database") & inurl:"php?id="
+(site:*.edu | site:*.org | site:*.gov) & intext:"vulnerable"
 
-# Excluding results
-"sql injection" -site:github.com -site:stackoverflow.com
+# Exclusion Patterns
+"sql injection" -site:github.com -site:stackoverflow.com -site:w3schools.com
+"xss vulnerability" -site:owasp.org -site:portswigger.net
+"file upload" -site:github.com -site:documentation
 
-# Wildcard searches
+# Wildcard Usage
 "password" filetype:* site:*.edu
+"admin" inurl:* filetype:php
+"database" intext:* site:*.gov
+```
 
-# Date ranges
+### 🌍 Geographic and Domain Targeting
+```
+# Country-Specific TLD Targeting
+site:*.np (Nepal)
+site:*.in (India)
+site:*.pk (Pakistan)
+site:*.bd (Bangladesh)
+site:*.lk (Sri Lanka)
+site:*.mm (Myanmar)
+site:*.bt (Bhutan)
+
+# Organization Type Targeting
+site:*.edu (Educational)
+site:*.gov (Government)
+site:*.mil (Military)
+site:*.org (Non-profit)
+site:*.ac.* (Academic - International)
+```
+
+### 📅 Time-Based Searches
+```
+# Date Range Searches
 after:2020 "data breach"
 before:2022 "vulnerability disclosure"
+after:2021 before:2023 "security incident"
+
+# Recent Content Focus
+after:2023 "zero day"
+after:2022 "cve" "vulnerability"
 ```
 
-### Site-Specific Searches
+### 🔗 File Type Combinations
 ```
-# Educational institutions
-site:*.edu "vulnerable"
-
-# Government sites
-site:*.gov "security"
-
-# Specific domains
-site:example.com "admin"
-
-# IP ranges (use Shodan for this)
-net:"192.168.1.0/24"
-```
-
-### File Type Combinations
-```
-(filetype:php OR filetype:asp OR filetype:jsp) "admin"
-(filetype:txt OR filetype:log OR filetype:conf) "password"
-(filetype:sql OR filetype:db OR filetype:mdb) "users"
+# Multiple File Type Searches
+(filetype:php | filetype:asp | filetype:jsp) "admin"
+(filetype:txt | filetype:log | filetype:conf) "password"
+(filetype:sql | filetype:db | filetype:mdb) "users"
+(filetype:env | filetype:config | filetype:ini) "secret"
 ```
 
 ---
 
-## 📖 Usage Guidelines
+## 📖 Usage Guidelines & Best Practices
 
-### Best Practices
-1. **Always get permission** before testing any system
-2. **Use VPN** for anonymity during research
-3. **Document findings** properly for reports
-4. **Rate limit** your searches to avoid detection
-5. **Verify results** manually before reporting
+### 🎯 Effective Dorking Strategies
+```
+1. Start with Easy Level dorks for broad discovery
+2. Use Medium Level for targeted reconnaissance  
+3. Apply Advanced Level for specific vulnerabilities
+4. Deploy Multi-Thread Level for mass discovery
+5. Reserve Crazy Level for comprehensive assessments
+```
 
-### Search Tips
-1. Use quotes for exact phrase matching
-2. Combine multiple operators for precise results
-3. Use exclusion (-) to filter out noise
-4. Try variations of keywords
-5. Use different search engines (Google, Bing, DuckDuckGo)
+### 🔒 Ethical Guidelines
+```
+✅ Always get explicit written permission
+✅ Use only for authorized penetration testing
+✅ Respect rate limits and avoid server overload
+✅ Document findings for responsible disclosure
+✅ Follow local laws and regulations
+✅ Use VPN for anonymity and protection
+```
 
-### Tools Integration
-- **Burp Suite**: Import found URLs for testing
-- **OWASP ZAP**: Automated scanning of discovered endpoints
-- **Nmap**: Port scanning of discovered systems
-- **SQLmap**: Automated SQL injection testing
-- **XSStrike**: XSS vulnerability testing
+### 🛡️ Operational Security (OPSEC)
+```
+🔐 Use VPN or Tor for anonymity
+🔐 Rotate User-Agent strings regularly
+🔐 Implement search delays between queries
+🔐 Use different search engines alternately
+🔐 Clear browser data between sessions
+🔐 Monitor for detection and blocking
+```
+
+### 📊 Result Verification Process
+```
+1. Manual verification of discovered endpoints
+2. Test for actual vulnerabilities (authorized only)
+3. Document findings with screenshots
+4. Classify severity levels appropriately
+5. Prepare for responsible disclosure
+```
 
 ---
 
-## 🤝 Contributing
+## 🤝 Contributing to DorkBox
 
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
-
-### How to Contribute
+### 📝 How to Contribute
+```
 1. Fork the repository
-2. Create a feature branch
-3. Add new dorks with proper categorization
-4. Test the dorks for accuracy
-5. Submit a pull request
+2. Create a feature branch (git checkout -b new-dorks)
+3. Add your tested and working dorks
+4. Categorize by difficulty level
+5. Test thoroughly before submission
+6. Submit a pull request with clear descriptions
+```
 
-### Contribution Categories
-- New vulnerability types
-- Better search patterns
-- Regional/language-specific dorks
-- Tool integration examples
-- Educational resources
+### 🎯 Contribution Categories Needed
+```
+- New vulnerability types and patterns
+- Country/region-specific dorks
+- Industry-specific dorks (healthcare, finance, etc.)
+- Emerging technology dorks (blockchain, AI, etc.)
+- Mobile application dorks
+- Cloud service specific dorks
+```
+
+### ✅ Quality Standards
+```
+✅ All dorks must be tested and working
+✅ Include difficulty level classification
+✅ Provide clear descriptions and context
+✅ Follow ethical usage guidelines
+✅ Include real-world examples when possible
+```
 
 ---
 
-## 📚 References & Resources
+## 📚 Learning Resources & References
 
-### Learning Resources
-- [OWASP Testing Guide](https://owasp.org/www-project-web-security-testing-guide/)
-- [PortSwigger Web Security Academy](https://portswigger.net/web-security)
-- [HackerOne Hacktivity](https://hackerone.com/hacktivity)
-- [SANS Penetration Testing](https://www.sans.org/cyber-security-courses/penetration-testing-ethical-hacking/)
+### 🎓 Educational Platforms
+```
+- OWASP Web Security Testing Guide
+- PortSwigger Web Security Academy  
+- HackerOne Hacktivity Reports
+- SANS Penetration Testing Courses
+- Cybrary Security Training
+```
 
-### Tools
-- [Google Hacking Database](https://www.exploit-db.com/google-hacking-database)
-- [Shodan](https://www.shodan.io/)
-- [Censys](https://censys.io/)
-- [PublicWWW](https://publicwww.com/)
+### 🛠️ Essential Tools Integration
+```
+- Burp Suite: Import discovered URLs for testing
+- OWASP ZAP: Automated scanning of endpoints
+- Nmap: Port scanning of discovered systems
+- SQLmap: Automated SQL injection testing
+- XSStrike: Cross-site scripting testing
+- Nuclei: Fast vulnerability scanner
+```
+
+### 🌐 Alternative Search Engines
+```
+- Shodan: Internet-connected device search
+- Censys: Internet asset discovery
+- PublicWWW: Source code search engine
+- BinaryEdge: Cybersecurity search engine
+- Fofa: Cyberspace mapping
+```
 
 ---
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License**.
+
+### 🎯 License Summary:
+- ✅ **Use** for security research and educational purposes
+- ✅ **Attribution** required when using or referencing
+- ❌ **No commercial use** without explicit permission
+- ❌ **No redistribution** or derivative works allowed
+
+### 📋 Usage Requirements:
+- Must credit original author and repository
+- Must link back to original source
+- Use only for legal and ethical purposes
+- Comply with all applicable laws and regulations
 
 ---
 
-## ⚖️ Legal Notice
+## ⚖️ Final Legal Notice
 
-This repository is for educational purposes only. The authors and contributors are not responsible for any misuse of the information provided. Always ensure you have proper authorization before testing any systems.
+**🚨 IMPORTANT REMINDER 🚨**
 
-**Remember: With great power comes great responsibility. Use these tools ethically and legally.**
+This repository contains powerful search techniques that can discover sensitive information and vulnerable systems. The tools and techniques provided are intended solely for:
+
+- **✅ Authorized security testing**
+- **✅ Educational and research purposes**  
+- **✅ Bug bounty programs within scope**
+- **✅ Improving your own security posture**
+
+**❌ NEVER USE FOR:**
+- Unauthorized access to systems
+- Malicious activities or attacks
+- Violating terms of service
+- Any illegal activities
+
+By using this repository, you acknowledge that you understand these restrictions and agree to use the information responsibly and legally.
 
 ---
 
-⭐ **If this repository helped you in your security research, please consider giving it a star!**
+## 🌟 Support DorkBox
 
-**Happy Ethical Hacking! 🔒**
+If this repository has helped you in your security research or educational journey:
+
+⭐ **Give us a star on GitHub**  
+🐛 **Report issues and suggest improvements**  
+🤝 **Contribute your own working dorks**  
+📢 **Share with the security community**  
+💬 **Join discussions and provide feedback**
+
+**Together, we can make the internet more secure through responsible research and ethical hacking! 🔒**
+
+---
+
+**Happy Ethical Hacking!** 🔍🛡️
