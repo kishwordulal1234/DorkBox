@@ -1,6 +1,6 @@
 # 🔍 Comprehensive Google Dorks for Security Research
 
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/google-dorks?style=social)](https://github.com/yourusername/google-dorks)
+[![GitHub stars](https://img.shields.io/github/stars/yourusername/google-dorks?style=social)](https://github.com/kishwordulal1234/DorkBox)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
