@@ -139,18 +139,18 @@ Bing-Specific Operators:
 
 ## 💉 SQL Injection Dorks
 
-## for maxium effect always use -site:bugs.mysql.com which will increase the power by 99% give aject reasult all the time 
+## for maxium effect always use ''' -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+'''   which will increase the power by 99% give aject reasult all the time 
 
 
 ### 🟢 Easy Level SQL Injection Dorks (Beginner)
 ```
 # Basic PHP MySQL Errors
-intext:"Warning: mysql_fetch_assoc()" inurl:".php?id=" -site:bugs.mysql.com 
-intext:"Warning: mysql_num_rows()" inurl:".php?id=" -site:bugs.mysql.com 
-intext:"SQL syntax error" inurl:"php?id=" -site:bugs.mysql.com 
-intext:"mysql_fetch_array()" inurl:"id=" -site:bugs.mysql.com 
-inurl:".php?id=" "You have an error in your SQL syntax" -site:bugs.mysql.com 
-
+intext:"Warning: mysql_fetch_assoc()" inurl:".php?id=" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+intext:"Warning: mysql_num_rows()" inurl:".php?id=" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+intext:"SQL syntax error" inurl:"php?id=" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+intext:"mysql_fetch_array()" inurl:"id=" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+inurl:".php?id=" "You have an error in your SQL syntax" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
 # Simple Parameter Testing
 inurl:"news.php?id="
 inurl:"article.php?id="
@@ -162,24 +162,24 @@ inurl:"item.php?id="
 ### 🟡 Medium Level SQL Injection Dorks (Intermediate)
 ```
 # Multiple Database Error Types
-intext:"SQLSTATE[42000]" inurl:"php?id="
-intext:"Warning: pg_query()" inurl:".php?id="
-intext:"Microsoft OLE DB Provider" inurl:"asp?id="
-intext:"ORA-00933: SQL command not properly ended"
-intext:"sqlite3.OperationalError:" inurl:"py?"
+intext:"SQLSTATE[42000]" inurl:"php?id=" ite:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+intext:"Warning: pg_query()" inurl:".php?id=" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+intext:"Microsoft OLE DB Provider" inurl:"asp?id=" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+intext:"ORA-00933: SQL command not properly ended" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com 
+intext:"sqlite3.OperationalError:" inurl:"py?" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com 
 
 # Regional Targeting with Errors
-site:*.edu intext:"SQL syntax error" | intext:"mysql_fetch_assoc"
-site:*.gov intext:"Warning: mysql" inurl:"php?id="
-site:*.org intext:"SQLSTATE" | intext:"PDOException"
+site:*.edu intext:"SQL syntax error" | intext:"mysql_fetch_assoc" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com 
+site:*.gov intext:"Warning: mysql" inurl:"php?id=" site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com 
+site:*.org intext:"SQLSTATE" | intext:"PDOException" site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
 ```
 
 ### 🔴 Advanced Level SQL Injection Dorks (Expert)
 ```
 # Complex Parameter Combinations
-inurl:(details.php | view.php | item.php | search.php) inurl:id= intext:"mysql"
-site:*.com inurl:"php?id=" (intext:"SQL syntax" | intext:"mysql_fetch" | intext:"Warning:")
-(inurl:"category=" | inurl:"cat=" | inurl:"cid=") intext:"database error"
+inurl:(details.php | view.php | item.php | search.php) inurl:id= intext:"mysql" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+site:*.com inurl:"php?id=" (intext:"SQL syntax" | intext:"mysql_fetch" | intext:"Warning mysql():") -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+(inurl:"category=" | inurl:"cat=" | inurl:"cid=") intext:"database error" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
 
 # Advanced Database-Specific Errors
 site:*.edu intext:"Microsoft OLE DB Provider for SQL Server" intext:"80040e14"
@@ -190,9 +190,9 @@ site:*.org intext:"Oracle error" | intext:"ORA-" inurl:"jsp?"
 ### 🚀 Multi-Thread Level SQL Injection Dorks (Mass Discovery)
 ```
 # Bulk Discovery Patterns
-((inurl:"id=" | inurl:"pid=" | inurl:"uid=" | inurl:"cid=") & (intext:"mysql" | intext:"sql" | intext:"database")) site:*.com
-((inurl:"page=" | inurl:"article=" | inurl:"news=" | inurl:"item=") & (intext:"error" | intext:"warning" | intext:"fatal")) filetype:php
-(site:*.edu | site:*.org | site:*.gov) & ((inurl:"id=" | inurl:"page=") & (intext:"mysql" | intext:"sql"))
+((inurl:"id=" | inurl:"pid=" | inurl:"uid=" | inurl:"cid=") & (intext:"mysql" | intext:"sql" | intext:"database")) site:*.com  -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+((inurl:"page=" | inurl:"article=" | inurl:"news=" | inurl:"item=") & (intext:"error" | intext:"warning" | intext:"fatal")) filetype:php -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+(site:*.edu | site:*.org | site:*.gov) & ((inurl:"id=" | inurl:"page=") & (intext:"mysql" | intext:"sql")) -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
 ```
 
 ### 🔥 Crazy Level SQL Injection Dorks (Extreme Discovery)
@@ -201,23 +201,23 @@ site:*.org intext:"Oracle error" | intext:"ORA-" inurl:"jsp?"
 (((inurl:"id=" | inurl:"pid=" | inurl:"uid=" | inurl:"cid=" | inurl:"page=" | inurl:"cat=") & (intext:"mysql" | intext:"sql" | intext:"database" | intext:"oracle" | intext:"postgresql")) & (site:*.com | site:*.org | site:*.net | site:*.edu | site:*.gov)) -site:github.com -site:stackoverflow.com
 
 # Country-Specific Mass Discovery
-((site:*.np | site:*.in | site:*.pk | site:*.bd | site:*.lk) & (inurl:"php?id=" | inurl:"asp?id=") & (intext:"SQL" | intext:"mysql" | intext:"database"))
+((site:*.np | site:*.in | site:*.pk | site:*.bd | site:*.lk) & (inurl:"php?id=" | inurl:"asp?id=") & (intext:"SQL" | intext:"mysql" | intext:"database")) -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
 ```
 
 ### 🗄️ Database-Specific SQL Injection Dorks
 
 #### MySQL Database Errors
 ```
-intext:"Warning: mysql_fetch_assoc()" inurl:"php?id="
-intext:"mysql_num_rows(): supplied argument" inurl:".php?id="
-intext:"Table 'mysql.user' doesn't exist" inurl:"php?"
-intext:"MySQL server version for the right syntax" inurl:"id="
-site:*.np intext:"Warning: mysql" | intext:"mysql_fetch"
+intext:"Warning: mysql_fetch_assoc()" inurl:"php?id="  -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+intext:"mysql_num_rows(): supplied argument" inurl:".php?id="  -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com 
+intext:"Table 'mysql.user' doesn't exist" inurl:"php?"  -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+intext:"MySQL server version for the right syntax" inurl:"id="  -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com 
+site:*.np intext:"Warning: mysql" | intext:"mysql_fetch" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
 ```
 
 #### PostgreSQL Database Errors  
 ```
-intext:"Warning: pg_query()" inurl:"php?"
+intext:"Warning: pg_query()" inurl:"php?" 
 intext:"PostgreSQL query failed: ERROR:" 
 intext:"pg_connect(): Unable to connect" inurl:"php?"
 intext:"relation does not exist" inurl:"php?id="
@@ -235,54 +235,54 @@ site:*.gov intext:"ORA-" | intext:"Oracle error"
 
 #### SQL Server (MSSQL) Errors
 ```
-intext:"Microsoft OLE DB Provider for SQL Server" intext:"80040e14"
-intext:"ODBC SQL Server Driver" inurl:"asp?"
-intext:"Unclosed quotation mark before the character string"
-intext:"Microsoft JET Database Engine error" inurl:"asp?id="
-site:*.com intext:"Microsoft OLE DB" | intext:"SQL Server"
+intext:"Microsoft OLE DB Provider for SQL Server" intext:"80040e14" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+intext:"ODBC SQL Server Driver" inurl:"asp?" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+intext:"Unclosed quotation mark before the character string" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+intext:"Microsoft JET Database Engine error" inurl:"asp?id=" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+site:*.com intext:"Microsoft OLE DB" | intext:"SQL Server" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
 ```
 
 #### SQLite Database Errors
 ```
-intext:"sqlite3.OperationalError:" inurl:"py?"
-intext:"SQLite error: database is locked"
-intext:"database disk image is malformed"
-intext:"SQLite format 3" filetype:db
-site:*.org intext:"sqlite" | intext:"SQLite error"
+intext:"sqlite3.OperationalError:" inurl:"py?" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com 
+intext:"SQLite error: database is locked" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com 
+intext:"database disk image is malformed" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+intext:"SQLite format 3" filetype:db -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+site:*.org intext:"sqlite" | intext:"SQLite error" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
 ```
 
 ### ⏱️ Time-Based SQL Injection Discovery
 ```
 # Time Delay Function Detection
-inurl:"php?id=" intext:"sleep(" 
-inurl:"asp?id=" intext:"waitfor delay"
-inurl:"php?" intext:"benchmark("
-inurl:"jsp?" intext:"dbms_pipe.receive_message"
-site:*.edu inurl:"id=" intext:"sleep" | intext:"delay"
+inurl:"php?id=" intext:"sleep("  -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+inurl:"asp?id=" intext:"waitfor delay" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+inurl:"php?" intext:"benchmark(" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+inurl:"jsp?" intext:"dbms_pipe.receive_message" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+site:*.edu inurl:"id=" intext:"sleep" | intext:"delay" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
 ```
 
 ### 🔍 Boolean-Based Blind SQL Injection
 ```
-inurl:"php?id=" intext:"true" intext:"false"
-inurl:"id=" (intext:"1=1" | intext:"1=2") filetype:php
-inurl:"search.php?" intext:"and" intext:"or"
-site:*.com inurl:"category=" (intext:"true" | intext:"false")
+inurl:"php?id=" intext:"true" intext:"false" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+inurl:"id=" (intext:"1=1" | intext:"1=2") filetype:php -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+inurl:"search.php?" intext:"and" intext:"or" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+site:*.com inurl:"category=" (intext:"true" | intext:"false") -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
 ```
 
 ### 📊 UNION-Based SQL Injection Discovery
 ```
-inurl:"php?id=" intext:"union select"
-inurl:"id=" intext:"union all select" filetype:php
-inurl:"page=" intext:"order by" filetype:asp
-inurl:"item=" intext:"group by" intext:"having"
+inurl:"php?id=" intext:"union select" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+inurl:"id=" intext:"union all select" filetype:php -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+inurl:"page=" intext:"order by" filetype:asp -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+inurl:"item=" intext:"group by" intext:"having" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com 
 ```
 
 ### 💾 Stored/Insert SQL Injection
 ```
-inurl:"register.php" intext:"insert into"
-inurl:"contact.php" intext:"insert" intext:"values"
-inurl:"feedback.php" intext:"update" intext:"set"
-inurl:"comment.php" intext:"insert" | intext:"update"
+inurl:"register.php" intext:"insert into" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+inurl:"contact.php" intext:"insert" intext:"values" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+inurl:"feedback.php" intext:"update" intext:"set" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
+inurl:"comment.php" intext:"insert" | intext:"update" -site:bugs.mysql.com -site:bug.php -site:bugs -site:sphinxsearch.com -site:webassist.com -site:ghithu.com -site:stackoverflow.com -site:routicket.com -site:mydbr.com
 ```
 
 ---
