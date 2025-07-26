@@ -139,14 +139,17 @@ Bing-Specific Operators:
 
 ## 💉 SQL Injection Dorks
 
+## for maxium effect always use -site:bugs.mysql.com which will increase the power by 99% give aject reasult all the time 
+
+
 ### 🟢 Easy Level SQL Injection Dorks (Beginner)
 ```
 # Basic PHP MySQL Errors
-intext:"Warning: mysql_fetch_assoc()" inurl:".php?id="
-intext:"Warning: mysql_num_rows()" inurl:".php?id="
-intext:"SQL syntax error" inurl:"php?id="
-intext:"mysql_fetch_array()" inurl:"id="
-inurl:".php?id=" "You have an error in your SQL syntax"
+intext:"Warning: mysql_fetch_assoc()" inurl:".php?id=" -site:bugs.mysql.com 
+intext:"Warning: mysql_num_rows()" inurl:".php?id=" -site:bugs.mysql.com 
+intext:"SQL syntax error" inurl:"php?id=" -site:bugs.mysql.com 
+intext:"mysql_fetch_array()" inurl:"id=" -site:bugs.mysql.com 
+inurl:".php?id=" "You have an error in your SQL syntax" -site:bugs.mysql.com 
 
 # Simple Parameter Testing
 inurl:"news.php?id="
