@@ -1,6 +1,6 @@
 # 🔍 DorkBox - The Ultimate Google Dorks Toolkit
 
-[![GitHub stars](https://img.shields.io/github/stars/yourusername/dorkbox?style=social)](https://github.com/yourusername/dorkbox)
+[![GitHub stars](https://img.shields.io/github/stars/kishwordulal1234/dorkbox?style=social)](https://github.com/kishwordulal1234/DorkBox?tab=readme-ov-file)
 [![License](https://img.shields.io/badge/license-CC%20BY--NC--ND%204.0-blue.svg)](LICENSE)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
